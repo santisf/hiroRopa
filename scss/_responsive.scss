@@ -44,6 +44,7 @@ header{
     .container__row--margin{
         margin-top:$espacioEntreFilas;
         margin-bottom:($espacioEntreFilas)-20px;
+
         .container__row__col--margin{
             padding:$resetPadding;
             border-radius: $bordeRedondoLeft;
@@ -54,6 +55,9 @@ header{
                 a{
                     .container__row__col__a__div--margin{
                         padding:$paddingTitulosMobil;
+                    }
+                    .container__row__div__a__imgSeccionIndex--mobil{
+                        min-width:720px;
                     }
                 }
                 
