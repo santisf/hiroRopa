@@ -38,17 +38,31 @@ header{
     }
     
 }
-.container{
-  
-    /* SECCIONES DEL INDEX */
+
+ /* SECCIONES DEL INDEX */
+
+ .container--seccionIndex{
+    @media only screen and (max-width:991px){
+        display:flex;
+        justify-content: center;
+    }
+ }
+ .container{
+    
+    
     .container__row--margin{
         margin-top:$espacioEntreFilas;
         margin-bottom:($espacioEntreFilas)-20px;
+        @media only screen and (max-width:991px){
+            max-width:665px;
+        }
 
         .container__row__col--margin{
             padding:$resetPadding;
             border-radius: $bordeRedondoLeft;
+           
         }
+
         @media only screen and (max-width:991px) {
             .container__row__col--margin{
                 border-radius: $bordeRedondoTop;
@@ -56,18 +70,14 @@ header{
                     .container__row__col__a__div--margin{
                         padding:$paddingTitulosMobil;
                     }
-                    .container__row__div__a__imgSeccionIndex--mobil{
-                        min-width:720px;
-                    }
+                  
                 }
                 
             }
             
         }
         /* COLUMNA DE BUZOS */
-        .container__row__col--width{
-            max-width: 650px;
-        }
+        
         .container__row__col--margin1{
             border-radius:$bordeRedondoRight;
             a{
