@@ -1,0 +1,599 @@
+.btn-primary {
+  font-size: 14px; }
+
+header .header__nav--fontSize {
+  font-size: 15px; }
+
+.container .row div a div .container__row__col__a__div__title--tamanio {
+  font-size: 35px;
+  letter-spacing: 3px;
+  font-weight: 600; }
+
+.container .row div a div .container__row__col__a__div__p--tamanio {
+  font-size: 0.8em; }
+
+.cuadrados .row div div .cuadrados__row__div__div__texto--tamanio {
+  font-size: 0.7em; }
+
+/* SECCION NOSOTROS */
+.nosotros .row.nosotros__row .nosotros__row__div__titulo {
+  font-size: 35px;
+  letter-spacing: 3px;
+  font-weight: 600; }
+
+.nosotros .row.nosotros__row .nosotros__row__div__p {
+  font-size: 0.8em; }
+
+.nosotros .row.nosotros__textoNosotros {
+  font-size: 18px; }
+
+body {
+  background-color: #f8f8f8; }
+
+.modal-content {
+  background-color: #f8f8f8; }
+
+ul {
+  list-style: none; }
+
+a.page-link {
+  color: #9a8bfd; }
+
+a.page-link:hover {
+  color: #6F5CF3; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+a:hover {
+  text-decoration: none;
+  color: #6F5CF3; }
+
+.header--background {
+  background-image: linear-gradient(to top, #cfc6c6, #ebe9e9, white, white); }
+
+.btn-outline-success {
+  border-color: #6F5CF3; }
+  .btn-outline-success a {
+    color: #6F5CF3; }
+
+.btn-outline-success:hover {
+  border-color: #9a8bfd;
+  background-color: black; }
+  .btn-outline-success:hover a {
+    color: white; }
+
+.btn-primary {
+  background-color: #6F5CF3;
+  border-color: black; }
+
+.btn-primary:hover {
+  background-color: black;
+  border-color: #9a8bfd; }
+
+/* MAPA DE COLORES DE BOTONES*/
+.btn-primary {
+  color: white; }
+
+.btn-primary:hover {
+  color: white; }
+
+.btn-outline-success {
+  color: #6F5CF3; }
+
+.btn-outline-success:hover {
+  color: white; }
+
+/* INDEX */
+.container .row .container__row__col--background {
+  background-color: #ebe9e9;
+  transition: all 0.5s; }
+  .container .row .container__row__col--background a .container__row__col__a__div--color {
+    color: black; }
+
+.container .row .container__row__col--background:hover {
+  background-color: black; }
+  .container .row .container__row__col--background:hover .container__row__col__a__div--color {
+    color: white; }
+
+.cuadrados .row div .cuadrados__row__div__div--colorElementos {
+  color: white; }
+
+.cuadrados .row div .cuadrados__row__div__div--colorElementos:hover {
+  color: #9a8bfd; }
+
+.footer {
+  background-image: linear-gradient(#cfc6c6, #ebe9e9, white, white); }
+
+/* SECCION DE CONTACTO */
+.contacto {
+  background-image: linear-gradient(to top, #ebe9e9, #f8f8f8, #f8f8f8); }
+  .contacto .row div .contacto__row__div__form {
+    background-color: #ebe9e9; }
+
+/* seccion NOSOTROS */
+.nosotros .row.nosotros__row {
+  background-color: black; }
+  .nosotros .row.nosotros__row .nosotros__row__div__titulo {
+    color: white; }
+  .nosotros .row.nosotros__row .nosotros__row__div__p {
+    color: white; }
+
+.nosotros .nosotros__textoNosotros {
+  background-color: #ebe9e9; }
+
+/*SECCION NUEVOS HTML*/
+/* CARDS DE PRODUCTOS NUEVO */
+.nuevos__row, .remeras__row, .buzos__row, .accesorios__row {
+  background-image: linear-gradient(to top, #f8f8f8, white, white); }
+
+/*SECCION REMERAS HTML*/
+/* CARDS DE PRODUCTOS REMERAS*/
+/*SECCION BUZOS HTML*/
+/* CARDS DE PRODUCTOS BUZOS*/
+/*SECCION ACCSESORIOS HTML*/
+/* CARDS DE PRODUCTOS ACCESORIOS*/
+/* ELEMENTO DE PAGINACION ACCSESORIOS*/
+.paginacionAccesorios nav ul li .paginacionAccesorios__nav__ul__li__paginaActiva {
+  background-color: black;
+  color: white; }
+
+/* SECCION CARRITO.HTML ----------------------------------------------------------------*/
+.carrito .row .carrito__row__tusProductos {
+  background-image: linear-gradient(to top, #ebe9e9, white); }
+
+.carrito .row .carrito__row__datosPersonales {
+  background-color: #f8f8f8; }
+
+.carrito .row .carrito__row__confirm {
+  background-color: #ebe9e9; }
+
+body {
+  background-color: #f8f8f8; }
+
+.modal-content {
+  background-color: #f8f8f8; }
+
+ul {
+  list-style: none; }
+
+a.page-link {
+  color: #9a8bfd; }
+
+a.page-link:hover {
+  color: #6F5CF3; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+a:hover {
+  text-decoration: none;
+  color: #6F5CF3; }
+
+.header--background {
+  background-image: linear-gradient(to top, #cfc6c6, #ebe9e9, white, white); }
+
+.btn-outline-success {
+  border-color: #6F5CF3; }
+  .btn-outline-success a {
+    color: #6F5CF3; }
+
+.btn-outline-success:hover {
+  border-color: #9a8bfd;
+  background-color: black; }
+  .btn-outline-success:hover a {
+    color: white; }
+
+.btn-primary {
+  background-color: #6F5CF3;
+  border-color: black; }
+
+.btn-primary:hover {
+  background-color: black;
+  border-color: #9a8bfd; }
+
+/* MAPA DE COLORES DE BOTONES*/
+.btn-primary {
+  color: white; }
+
+.btn-primary:hover {
+  color: white; }
+
+.btn-outline-success {
+  color: #6F5CF3; }
+
+.btn-outline-success:hover {
+  color: white; }
+
+/* INDEX */
+.container .row .container__row__col--background {
+  background-color: #ebe9e9;
+  transition: all 0.5s; }
+  .container .row .container__row__col--background a .container__row__col__a__div--color {
+    color: black; }
+
+.container .row .container__row__col--background:hover {
+  background-color: black; }
+  .container .row .container__row__col--background:hover .container__row__col__a__div--color {
+    color: white; }
+
+.cuadrados .row div .cuadrados__row__div__div--colorElementos {
+  color: white; }
+
+.cuadrados .row div .cuadrados__row__div__div--colorElementos:hover {
+  color: #9a8bfd; }
+
+.footer {
+  background-image: linear-gradient(#cfc6c6, #ebe9e9, white, white); }
+
+/* SECCION DE CONTACTO */
+.contacto {
+  background-image: linear-gradient(to top, #ebe9e9, #f8f8f8, #f8f8f8); }
+  .contacto .row div .contacto__row__div__form {
+    background-color: #ebe9e9; }
+
+/* seccion NOSOTROS */
+.nosotros .row.nosotros__row {
+  background-color: black; }
+  .nosotros .row.nosotros__row .nosotros__row__div__titulo {
+    color: white; }
+  .nosotros .row.nosotros__row .nosotros__row__div__p {
+    color: white; }
+
+.nosotros .nosotros__textoNosotros {
+  background-color: #ebe9e9; }
+
+/*SECCION NUEVOS HTML*/
+/* CARDS DE PRODUCTOS NUEVO */
+.nuevos__row, .remeras__row, .buzos__row, .accesorios__row {
+  background-image: linear-gradient(to top, #f8f8f8, white, white); }
+
+/*SECCION REMERAS HTML*/
+/* CARDS DE PRODUCTOS REMERAS*/
+/*SECCION BUZOS HTML*/
+/* CARDS DE PRODUCTOS BUZOS*/
+/*SECCION ACCSESORIOS HTML*/
+/* CARDS DE PRODUCTOS ACCESORIOS*/
+/* ELEMENTO DE PAGINACION ACCSESORIOS*/
+.paginacionAccesorios nav ul li .paginacionAccesorios__nav__ul__li__paginaActiva {
+  background-color: black;
+  color: white; }
+
+/* SECCION CARRITO.HTML ----------------------------------------------------------------*/
+.carrito .row .carrito__row__tusProductos {
+  background-image: linear-gradient(to top, #ebe9e9, white); }
+
+.carrito .row .carrito__row__datosPersonales {
+  background-color: #f8f8f8; }
+
+.carrito .row .carrito__row__confirm {
+  background-color: #ebe9e9; }
+
+.header--sombra {
+  box-shadow: 0px 0px 15px 0px #362b2b; }
+  .header--sombra .row div nav .header__row__div__nav__logo {
+    box-shadow: 0px 0px 5px 0px #333; }
+  .header--sombra .row div nav .header__row__div__nav__logo:hover {
+    box-shadow: 0px 0px 10px 0px #6F5CF3; }
+
+/* secciones del index */
+.container .container__row--sombra {
+  filter: drop-shadow(0 0 5px #333); }
+
+.container .container__row--sombra::before {
+  transform: rotate(45deg); }
+
+.container .container__row--sombra:hover {
+  filter: drop-shadow(0 0 10px #6F5CF3); }
+
+.container .container__row--sombra::before:hover {
+  transform: rotate(45deg); }
+
+.cuadrados .row div .cuadrados__row__div__div--sombra {
+  filter: drop-shadow(0 0 5px #333); }
+
+.cuadrados .row div .cuadrados__row__div__div--sombra::before {
+  transform: rotate(45deg); }
+
+.cuadrados .row div .cuadrados__row__div__div--sombra:hover {
+  filter: drop-shadow(0 0 10px #6F5CF3); }
+
+.cuadrados .row div .cuadrados__row__div__div--sombra::before:hover {
+  transform: rotate(45deg); }
+
+.footer {
+  box-shadow: 0px 0px 15px 0px #362b2b; }
+
+/* cards de productos */
+.container .row div .card {
+  box-shadow: 0px 0px 5px 0px #333; }
+
+.container .row div .card:hover {
+  box-shadow: 0px 0px 10px 0px #6F5CF3; }
+
+/* SECCION DE CONTACTO */
+.contacto .row div .contacto__row__div__infoContacto {
+  box-shadow: 0px 0px 5px 0px #333; }
+
+.contacto .row div .contacto__row__div__form--shadow {
+  box-shadow: 0px 0px 5px 0px #333; }
+
+.contacto .row div .contacto__row__div__form--shadow:hover {
+  box-shadow: 0px 0px 10px 0px #6F5CF3; }
+
+.contacto .row .contacto__row__div__a__logoContacto {
+  filter: drop-shadow(0 0 5px #333); }
+
+.contacto .row .contacto__row__div__a__logoContacto:hover {
+  filter: drop-shadow(0 0 10px #6F5CF3); }
+
+/* seccion NOSOTROS */
+.nosotros--sombra {
+  filter: drop-shadow(0 0 15px #333); }
+  .nosotros--sombra .nosotros__row--parallax a .nosotros__row__a__imgLogoNosotros {
+    filter: drop-shadow(0 0 5px #333); }
+  .nosotros--sombra .nosotros__row--parallax a .nosotros__row__a__imgLogoNosotros:hover {
+    filter: drop-shadow(0 0 10px #6F5CF3); }
+
+/*-----------------------------FOOTER--------------*/
+.footer .row div ul li a .footer__row__div__ul__li__a__icon {
+  transition: all 0.5s; }
+
+.footer .row div ul li a .footer__row__div__ul__li__a__icon:hover {
+  filter: drop-shadow(0 0 10px #6F5CF3); }
+
+/* SECCION CARRITO.HTML ----------------------------------------------------------------*/
+.carrito .row .carrito__row__tusProductos {
+  filter: drop-shadow(0 0 5px #333); }
+
+.carrito .row .carrito__row__datosPersonales {
+  filter: drop-shadow(0 0 5px #333); }
+
+.carrito .row .carrito__row__confirm {
+  filter: drop-shadow(0 0 5px #333); }
+
+header .row div {
+  padding: 0; }
+  header .row div nav a {
+    transition: all 0.3s; }
+  header .row div nav a:hover {
+    transform: scale(1.025, 1.025); }
+  header .row div nav div ul li .header__row__div__nav__div__ul__li__nav-link--icon {
+    padding-top: 6px;
+    margin-right: 16px; }
+
+.container {
+  /* SECCIONES DEL INDEX */ }
+  .container .container__row--margin {
+    margin-top: 25px;
+    margin-bottom: 5px;
+    /* COLUMNA DE BUZOS */ }
+    .container .container__row--margin .container__row__col--margin {
+      padding: 0;
+      border-radius: 8px 0 0 8px; }
+    @media only screen and (max-width: 991px) {
+      .container .container__row--margin .container__row__col--margin {
+        border-radius: 8px 8px 0px 0px; }
+        .container .container__row--margin .container__row__col--margin a .container__row__col__a__div--margin {
+          padding: 27px 0; } }
+    .container .container__row--margin .container__row__col--width {
+      max-width: 650px; }
+    .container .container__row--margin .container__row__col--margin1 {
+      border-radius: 0 8px 8px 0; }
+      .container .container__row--margin .container__row__col--margin1 a .container__row__col__a__div--margin {
+        padding: 27px 0; }
+    @media only screen and (max-width: 991px) {
+      .container .container__row--margin .container__row__col--margin1 {
+        border-radius: 0px 0px 8px 8px; } }
+    .container .container__row--margin .container__row__col--position {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .container .container__row--margin .container__row__col--position a .container__row__col__a__div__title--position {
+        text-align: center;
+        display: inline-block;
+        transition: all 0.3s; }
+      .container .container__row--margin .container__row__col--position a .container__row__col__a__div__title--position:hover {
+        transform: translate(10px, 10px); }
+      .container .container__row--margin .container__row__col--position a .container__row__col__a__div__p--position {
+        text-align: center;
+        transform: translate(10px, 10px); }
+
+/* CUADRADOS DEL INDEX */
+/* mixin para posicionar elementos dentro del cuadrado*/
+.cuadrados .container__rowCuadrados .cuadrados__row__col--margin {
+  margin-top: 25px;
+  padding: 7px; }
+  .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    transition: 0.3s; }
+    .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position .cuadrados__row__div__div__h4--position {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position .cuadrados__row__div__div__span--position {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position .cuadrados__row__div__div__texto--position {
+      position: absolute;
+      top: 78%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position .cuadrados__row__div__div__texto1--position {
+      position: absolute;
+      top: 63%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position:hover {
+    transform: scale(1.025, 1.025); }
+
+/* FOOTER */
+.footer {
+  margin-top: 2.5rem; }
+  .footer .row div {
+    display: flex;
+    justify-content: center; }
+    .footer .row div ul {
+      margin-top: 1rem;
+      margin-bottom: 0;
+      padding: 0;
+      text-align: center; }
+      .footer .row div ul li a .footer__row__div__ul__li__a__icon {
+        transition: all 0.3s; }
+      .footer .row div ul li a .footer__row__div__ul__li__a__icon:hover {
+        transform: scale(1.025, 1.025); }
+
+/* cards de productos - nuevos.html */
+.container .row div .card {
+  margin-top: 25px; }
+
+/* SECCION DE CONTACTO - contacto.html*/
+.contacto {
+  border-radius: 0px 0px 8px 8px;
+  padding: 0; }
+  .contacto .row.contacto__row--margin {
+    margin-bottom: 25px; }
+    .contacto .row.contacto__row--margin div .contacto__row__div__infoContacto {
+      padding: 20px;
+      border-radius: 8px 0 0 8px; }
+    @media only screen and (max-width: 991px) {
+      .contacto .row.contacto__row--margin div .contacto__row__div__infoContacto {
+        border-radius: 8px 8px 0px 0px; } }
+    .contacto .row.contacto__row--margin div .contacto__row__div__form {
+      padding: 20px;
+      border-radius: 0 8px 8px 0; }
+      .contacto .row.contacto__row--margin div .contacto__row__div__form div input:focus {
+        font-size: 24px; }
+      .contacto .row.contacto__row--margin div .contacto__row__div__form div textarea:focus {
+        font-size: 24px; }
+    @media only screen and (max-width: 991px) {
+      .contacto .row.contacto__row--margin div .contacto__row__div__form {
+        border-radius: 0px 0px 8px 8px; } }
+
+/* seccion NOSOTROS */
+.nosotros .row.nosotros__row {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  border-radius: 8px 8px 0px 0px; }
+  .nosotros .row.nosotros__row .nosotros__row__div {
+    padding: 27px 0; }
+    .nosotros .row.nosotros__row .nosotros__row__div .nosotros__row__div__titulo {
+      text-align: center; }
+    .nosotros .row.nosotros__row .nosotros__row__div .nosotros__row__div__p {
+      text-align: center; }
+
+.nosotros .nosotros__textoNosotros {
+  padding: 8% 19.9%; }
+
+.nosotros .nosotros__row--parallax {
+  /* The image used */
+  background-image: url("../assets/img/imagenNosotros.jpg");
+  /* Set a specific height */
+  height: 650px;
+  border-radius: 0px 0px 8px 8px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; }
+  .nosotros .nosotros__row--parallax a .nosotros__row__a__imgLogoNosotros {
+    position: absolute;
+    bottom: 1%;
+    left: 0.5%; }
+
+/*SECCION NUEVOS*/
+/* CARDS DE PRODUCTOS */
+.nuevos .nuevos__row, .nuevos .remeras__row, .nuevos .buzos__row, .nuevos .accesorios__row {
+  border-radius: 8px 8px 0px 0px; }
+
+/*SECCION REMERAS HTML*/
+/* CARDS DE PRODUCTOS REMERAS*/
+.remeras__row {
+  border-radius: 8px 8px 0px 0px; }
+
+/*SECCION BUZOS HTML*/
+/* CARDS DE PRODUCTOS BUZOS*/
+.buzos__row {
+  border-radius: 8px 8px 0px 0px; }
+
+/*SECCION ACCSESORIOS HTML*/
+/* CARDS DE PRODUCTOS ACCESORIOS*/
+.accesorios__row {
+  border-radius: 8px 8px 0px 0px; }
+  .accesorios__row div .card .card-body .accesorios__row__div__card__card-body__div--sinTalles {
+    display: flex;
+    justify-content: flex-end; }
+
+/* ELEMENTO DE PAGINACION ACCSESORIOS*/
+.paginacionAccesorios {
+  margin-top: 30px; }
+
+/* SECCION CARRITO.HTML ----------------------------------------------------------------*/
+.bodyCarrito {
+  overflow-x: hidden; }
+
+.carrito .row .carrito__row__tusProductos {
+  border-radius: 8px 0 0 0; }
+
+.carrito .row .carrito__row__datosPersonales {
+  border-radius: 0 8px 0 0;
+  position: relative;
+  left: 20px; }
+
+.carrito .row .carrito__row__confirm {
+  margin-top: 30px;
+  border-radius: 0px 0px 8px 8px; }
+
+@media only screen and (max-width: 991px) {
+  .carrito .row .carrito__row__tusProductos {
+    border-radius: 8px 8px 0px 0px; }
+  .carrito .row .carrito__row__datosPersonales {
+    margin-top: 30px;
+    left: 0;
+    border-radius: 0; } }
+
+.carrito .row div div .carrito__row__div__div__productosCarrito {
+  display: flex; }
+  .carrito .row div div .carrito__row__div__div__productosCarrito__img {
+    width: 300px;
+    margin-right: 10px; }
+
+.carrito .row div .carrito__row__div__pieCarrito {
+  text-align: center; }
+
+.carrito .row div .carrito__row__div__carritoMediosDePago {
+  display: flex; }
+  .carrito .row div .carrito__row__div__carritoMediosDePago div {
+    padding-left: 0; }
+
+.carrito .row div form .carrito__row__div__form__name--position {
+  display: flex; }
+  .carrito .row div form .carrito__row__div__form__name--position div {
+    padding: 0; }
+  .carrito .row div form .carrito__row__div__form__name--position .carrito__row__div__form__name__name--margin {
+    padding-right: 20px; }
+
+/* SECCION CARRITO EN INDEX MODAL */
+.modalCarrito {
+  padding-right: 0 !important; }
+  .modalCarrito .modalCarrito__margin {
+    margin: 0 0 auto auto; }
+  .modalCarrito div .modalCarrito__div__modalContent {
+    padding: 20px; }
+    .modalCarrito div .modalCarrito__div__modalContent div .modalCarrito__div__modalContent__div__bodyModalCarrito {
+      display: flex; }
+      .modalCarrito div .modalCarrito__div__modalContent div .modalCarrito__div__modalContent__div__bodyModalCarrito__imgModalCarrito {
+        width: 150px;
+        margin-right: 10px; }
+    .modalCarrito div .modalCarrito__div__modalContent__modalCarritoFooter {
+      text-align: center; }

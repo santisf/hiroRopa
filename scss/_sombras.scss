@@ -1,0 +1,182 @@
+@import "colores";
+$sombra1:0px 0px 5px 0px $sombraGris1;
+$sombra1Hover:0px 0px 10px 0px $lila1;
+$sombra2:0px 0px 15px 0px $sombraHeader;
+$sombra3: 0 0 5px $sombraGris1;
+$sombra3Hover: 0 0 10px $lila1;
+$rotacionSombra3: rotate(45deg);
+$sombra3bigger: 0 0 15px $sombraGris1;
+
+.header--sombra{
+    box-shadow:$sombra2 ;
+    .row{
+        div{
+            nav{
+                .header__row__div__nav__logo{
+                    box-shadow:$sombra1;
+                }
+                .header__row__div__nav__logo:hover{
+                    box-shadow:$sombra1Hover;
+                }
+                
+            }
+        }
+    }
+}
+/* secciones del index */
+.container{
+    .container__row--sombra{
+        filter: drop-shadow($sombra3);
+    }
+    .container__row--sombra::before{
+        transform : $rotacionSombra3;
+    }
+    .container__row--sombra:hover{
+        filter: drop-shadow($sombra3Hover);
+    }
+    .container__row--sombra::before:hover{
+        transform : $rotacionSombra3;
+    }
+}
+
+
+.cuadrados{
+    .row{
+        div{
+            .cuadrados__row__div__div--sombra{
+                filter: drop-shadow($sombra3);
+                
+            }
+            .cuadrados__row__div__div--sombra::before{
+                transform : $rotacionSombra3;
+                
+            }
+            .cuadrados__row__div__div--sombra:hover{
+                filter: drop-shadow($sombra3Hover);
+                
+            }
+            .cuadrados__row__div__div--sombra::before:hover{
+                transform : $rotacionSombra3;
+                
+            }
+        }
+    }
+}
+
+.footer{
+    box-shadow: $sombra2;
+}
+
+/* cards de productos */
+
+.container{
+    .row{
+        div{
+            .card{
+                box-shadow:$sombra1;
+            }
+            .card:hover{
+                box-shadow: $sombra1Hover;
+            }
+        }
+    }
+}
+/* SECCION DE CONTACTO */
+.contacto{
+    .row{
+        div{
+            .contacto__row__div__infoContacto{
+
+                box-shadow:$sombra1;
+            }
+            
+        }
+        div{
+            .contacto__row__div__form--shadow{
+                box-shadow: $sombra1;
+            }  
+            .contacto__row__div__form--shadow:hover{
+                box-shadow: $sombra1Hover;
+            }      
+        }
+    }
+    .row{
+        .contacto__row__div__a__logoContacto{
+            filter:drop-shadow($sombra3);
+        }
+        .contacto__row__div__a__logoContacto:hover{
+            filter:drop-shadow($sombra3Hover);
+        }
+    }
+}
+
+/* seccion NOSOTROS */
+
+.nosotros--sombra{
+    
+    filter:drop-shadow($sombra3bigger);
+    
+    .nosotros__row--parallax{
+       
+
+        a{
+            .nosotros__row__a__imgLogoNosotros{
+                filter: drop-shadow($sombra3);
+                
+            }
+            .nosotros__row__a__imgLogoNosotros:hover{
+                filter:drop-shadow($sombra3Hover);
+                
+            }
+        }
+
+    }
+    
+    
+}
+
+
+/*-----------------------------FOOTER--------------*/
+.footer{
+    
+     .row{
+         div{
+             
+             ul{
+                 
+                 
+                 li{
+                     a{
+                         .footer__row__div__ul__li__a__icon{
+                             transition:all $tiempoDeTransicion1;
+                         }
+                         .footer__row__div__ul__li__a__icon:hover{
+                             filter:drop-shadow($sombra3Hover);
+                         }
+ 
+                     }
+                     
+                 }
+                 
+             }
+         }
+        
+     }
+     
+ }
+
+ /* SECCION CARRITO.HTML ----------------------------------------------------------------*/
+
+.carrito{
+    .row{
+        .carrito__row__tusProductos{
+            filter:drop-shadow($sombra3);
+        }
+        .carrito__row__datosPersonales{
+            filter:drop-shadow($sombra3);
+        }
+        .carrito__row__confirm{
+            filter:drop-shadow($sombra3);
+        }
+    }
+}

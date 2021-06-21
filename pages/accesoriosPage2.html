@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/6ff7cf1653.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="container-fluid sticky-top header--background header--sombra">
+        <div class="row">
+          <div class="col-lg-12 col-xs-12">
+              <nav class="header__nav--fontSize navbar navbar-expand-lg navbar-light bg-light header--background">
+                <a class="navbar-brand" href="../index.html"><img src="../assets/img/logo1.png" class="header__row__div__nav__logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                  <ul class="navbar-nav ml-auto">  
+                    <li class="nav-item">
+                        <a class="nav-link active linkMenu" href="nuevos.html">NUEVOS</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle linkMenu" href="indumentaria.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        INDUMENTARIA
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="remeras.html">REMERAS</a>
+                        <a class="dropdown-item" href="buzos.html">BUZOS</a>                        
+                        <a class="dropdown-item" href="accesorios.html">ACCESORIOS</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">CONTACTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">NOSOTROS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">
+                            <img src="../assets/icons/carrito-de-compras.png">
+                        </a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">BUSCAR</button>
+                  </form>
+                </div>
+              </nav>
+          </div>
+        </div>
+   </header>
+   <!--------------------------------------------------------------TITULO DE SECCION ACCSESORIOS----------------------------------------------------->
+   <div class="container">
+       <div class="row">
+           <div class="col-12">
+               <br>
+               <br>
+               <h1>ACCESORIOS</h1>
+               <br>
+               <select name="orderby" class="form-control selectSeccion" aria-label="Pedido de la tienda">
+                    <option value="popularity">Ordenar por popularidad</option>
+                    <option value="date" selected="selected">Ordenar por los últimos</option>
+                    <option value="price">Ordenar por precio: bajo a alto</option>
+                    <option value="price-desc">Ordenar por precio: alto a bajo</option>
+                </select>
+                <hr>
+                <br>
+           </div>
+       </div>
+   </div>
+
+
+
+
+
+
+<!-- --------------------------------------------------------------------CARDS ACCSESORIOS                        -->
+
+
+
+
+   <section class="container accesorios">
+        <div class="row accesorios__row">
+            <!----------------------------------------------------------------------CINTURON NEGRO CUERO            -->
+            <div class="col-lg-4 col-xs-4 col-6" data-aos="fade-down-right" data-aos-duration="1000">
+                <div class="card">
+                    <img src="../assets/img/cinturonNegroCuero.png" class="card-img-top img-fluid" alt="cinturonNegroCuero">
+                    <div class="card-body">
+                        <h5 class="card-title">Cinturon negro - cuero</h5>
+                        <p class="card-text">$2100</p>
+                        <hr>
+                        
+                        <div class="input-group">
+                            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                <option selected>Talle</option>
+                                <option value="58">58</option>
+                                <option value="60">60</option>
+                            </select>
+                            <div class="input-group-append">
+                                <a href="#" class="btn btn-primary">AÑADIR <i class="fas fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----------------------------------------------------------GORRA NEGRA Y BLANCA A CUADROS        -->
+            <div class="col-lg-4 col-xs-4 col-6" data-aos="fade-down" data-aos-duration="1000">
+                <div class="card">
+                    <img src="../assets/img/gorraNegroBlancoCuadros.png" class="card-img-top img-fluid" alt="gorraNegroBlancoCuadros">
+                    <div class="card-body">
+                        <h5 class="card-title">Gorra a cuadros - B/N</h5>
+                        <p class="card-text">$2000</p>
+                        <hr>
+                        
+                        <div class="input-group">
+                            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                <option selected>Talle</option>
+                                <option value="58">58</option>
+                                <option value="60">60</option>
+                            </select>
+                            <div class="input-group-append">
+                                <a href="#" class="btn btn-primary">AÑADIR <i class="fas fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-------------------------------------------------------ANILLO SERPIENTE----------------------------------------------->
+            <div class="col-lg-4 col-xs-4 col-6" data-aos="fade-down-left" data-aos-duration="1000">
+                <div class="card">
+                    <img src="../assets/img/anilloSerpiente.png" class="card-img-top img-fluid" alt="anilloSerpiente">
+                    <div class="card-body">
+                        <h5 class="card-title">Anillo de serpiente - acero</h5>
+                        <p class="card-text">$350</p>
+                        <hr>
+                        
+                        <div class="input-group">
+                            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                <option selected>Talle</option>
+                                <option value="58">10</option>
+                                <option value="60">12</option>
+                            </select>
+                            <div class="input-group-append">
+                                <a href="#" class="btn btn-primary">AÑADIR <i class="fas fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-------------------------------------------PULSERA DE CIRULOS PLATA------------------------------------------------>
+            <div class="col-lg-4 col-xs-4 col-6" data-aos="fade-right" data-aos-duration="1000">
+                <div class="card">
+                    <img src="../assets/img/pulseraCirculosPlata.png" class="card-img-top img-fluid" alt="pulseraCirculosPlata">
+                    <div class="card-body">
+                        <h5 class="card-title">Pulsera circulos - plata</h5>
+                        <p class="card-text">$1250</p>
+                        <hr>
+                        
+                        <div class="input-group accesorios__row__div__card__card-body__div--sinTalles">
+                            
+                            <div class="input-group-append">
+                                <a href="#" class="btn btn-primary">AÑADIR <i class="fas fa-cart-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-----------------------------PAGINADOR-->
+
+    <section class="container paginacionAccesorios">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="accesorios.html" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="accesorios.html">1</a></li>
+            <li class="page-item"><a class="page-link paginacionAccesorios__nav__ul__li__paginaActiva" href="accesoriosPage2.html">2</a></li>
+            <li class="page-item disabled">
+                <a class="page-link" href=#>Next</a>
+            </li>
+            </ul>
+        </nav>
+    </section>
+
+
+
+
+  
+
+   <!--                            footer                                -->
+<footer class="container-fluid footer" data-aos="fade-up">
+    <div class="row">
+        <div class="col-lg-4 col-xs-4">
+            <ul>
+                <li><h6>SOPORTE</h6></li>
+                <li>PREGUNTAS FRECUENTES</li>
+                <li>CARRITO</li>
+                <hr>
+            </ul>
+        </div>
+        <div class="col-lg-4 col-xs-4">
+             <ul>
+                 <li><h6>NOVEDADES</h6></li>
+                 <li>
+                     <form>
+                         <div class="form-group">
+                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="   Correo electronico">
+                         </div>
+                         <button type="submit" class="btn btn-primary">SUSCRIBIRSE</button>
+                     </form>
+                 </li>
+                 <hr>   
+             </ul>
+         </div>
+         <div class="col-lg-4 col-xs-4">
+             <ul>
+                 <li><h6>SEGUINOS</h6></li>
+                 <br>
+                 <li>
+                   <a href="https://instragram.com"><img src="../assets/icons/instagram.png" class="redes"></a>
+                   <a href="https://facebook.com"><img src="../assets/icons/facebook.png" class="redes"></a>
+                   <a href="https://youtube.com"><img src="../assets/icons/youtube.png"class="redesY"></a>
+                 </li>
+                 <hr>
+             </ul>
+         </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+ AOS.init();
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>

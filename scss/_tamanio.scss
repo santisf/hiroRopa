@@ -1,0 +1,69 @@
+$tamanioP1:0.8em;
+$tamanioP2:18px;
+$tamanioPCuadrados:0.7em;
+$tamanioTitulos1:35px;
+$navFontSize:15px;
+$letterSpacingSecciones:3px;
+$fontWeightSecciones:600;
+
+.btn-primary{
+    font-size:14px;
+}
+
+
+header{
+    .header__nav--fontSize{
+        font-size:$navFontSize;
+    }
+}
+
+
+.container{
+    .row{
+        div{
+            a{
+                div{
+                    .container__row__col__a__div__title--tamanio{
+                        font-size:$tamanioTitulos1;
+                        letter-spacing: $letterSpacingSecciones;
+                        font-weight: $fontWeightSecciones;
+                    }
+                    .container__row__col__a__div__p--tamanio{
+                        font-size:$tamanioP1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cuadrados{
+    .row{
+        div{
+            div{
+                .cuadrados__row__div__div__texto--tamanio{
+                    font-size:$tamanioPCuadrados;
+                }
+            }
+        }
+    }
+}
+
+/* SECCION NOSOTROS */
+
+.nosotros{
+    .row.nosotros__row{
+        
+        .nosotros__row__div__titulo{
+            font-size:$tamanioTitulos1;
+            letter-spacing: $letterSpacingSecciones;
+            font-weight: $fontWeightSecciones;
+        }
+        .nosotros__row__div__p{
+            font-size:$tamanioP1;
+        }
+    }
+    .row.nosotros__textoNosotros{
+        font-size: $tamanioP2;
+    }
+}

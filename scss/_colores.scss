@@ -1,0 +1,237 @@
+$colorFondoElementos:#ebe9e9;
+$colorFondoBody:#f8f8f8;
+$colorFondoHeader:#cfc6c6;
+$textoColor:black;
+$textoColorHover:white;
+$colorFondoElementosHover:black;
+$tiempoDeTransicion1:0.5s;
+$sombraGris1:#333;
+$sombraHeader:rgb(54, 43, 43);
+$lila1:#6F5CF3;
+$lila2:#9a8bfd;
+$colorElementosCuadrado:white;
+$blanco:white;
+$negro:black;
+
+body{
+    background-color: $colorFondoBody;
+}
+.modal-content{
+    background-color: $colorFondoBody;
+}
+
+ul{
+    list-style: none;
+}
+
+a.page-link{
+    color:$lila2;
+}
+a.page-link:hover{
+    color:$lila1;
+}
+a{
+    text-decoration: none;
+    color:$textoColor;
+    
+}
+
+a:hover{
+    text-decoration: none;
+    color:$lila1;
+}
+
+.header--background{
+    background-image:linear-gradient(to top, $colorFondoHeader,$colorFondoElementos,$blanco,$blanco);
+
+}
+.btn-outline-success{
+    border-color: $lila1;
+    a{
+        color:$lila1; 
+    }
+}
+.btn-outline-success:hover{
+    border-color: $lila2;
+    background-color: $negro;
+    a{
+        color:$blanco; 
+    }
+}
+.btn-primary{
+    background-color: $lila1;
+    border-color: $negro;
+}
+.btn-primary:hover{
+    background-color: $negro;
+    border-color: $lila2;
+}
+
+/* MAPA DE COLORES DE BOTONES*/
+$colores-botones:(
+    primary:$blanco,
+    "primary:hover":$blanco,
+    outline-success:$lila1,
+    "outline-success:hover":$blanco
+
+    );
+
+@each $tipoBoton, $colorBoton in $colores-botones {
+    .btn-#{$tipoBoton}{
+        color:$colorBoton;
+    }
+}
+
+
+
+/* INDEX */
+
+.container{
+    .row{
+        .container__row__col--background{
+            background-color:$colorFondoElementos;
+            transition:all $tiempoDeTransicion1;
+                a{
+                    .container__row__col__a__div--color{
+                        color:$textoColor;
+                    }
+                   
+                }
+                
+               
+        }
+        .container__row__col--background:hover{
+            background-color: $colorFondoElementosHover;
+                .container__row__col__a__div--color{
+                    color:$textoColorHover;
+                }
+            
+        }
+    }
+
+}
+.cuadrados{
+    .row{
+        div{
+            .cuadrados__row__div__div--colorElementos{
+                color:$colorElementosCuadrado;
+            }
+            .cuadrados__row__div__div--colorElementos:hover{
+                color:$lila2;
+            }
+        }
+    }
+}
+
+.footer{
+    background-image: linear-gradient($colorFondoHeader,$colorFondoElementos,$blanco, $blanco);
+    
+    
+}
+/* SECCION DE CONTACTO */
+.contacto{
+    background-image:linear-gradient(to top, $colorFondoElementos, $colorFondoBody, $colorFondoBody);
+    
+    .row{
+        
+        div{
+            .contacto__row__div__form{
+                background-color:$colorFondoElementos;
+            }
+        }
+    }
+}
+
+
+/* seccion NOSOTROS */
+
+.nosotros{
+    .row.nosotros__row{
+        background-color: $negro;
+        .nosotros__row__div__titulo{
+            color:$blanco;
+        }
+        .nosotros__row__div__p{
+            color:$blanco
+        }
+    }
+    .nosotros__textoNosotros{
+        background-color: $colorFondoElementos;
+    }
+}
+
+
+/*SECCION NUEVOS HTML*/
+
+/* CARDS DE PRODUCTOS NUEVO */
+
+.nuevos{
+    &__row{
+        background-image: linear-gradient(to top, $colorFondoBody, $blanco, $blanco);
+    }
+
+}
+
+/*SECCION REMERAS HTML*/
+
+/* CARDS DE PRODUCTOS REMERAS*/
+
+.remeras{
+    &__row{
+        @extend .nuevos__row;
+    }
+}
+
+/*SECCION BUZOS HTML*/
+
+/* CARDS DE PRODUCTOS BUZOS*/
+
+.buzos{
+    &__row{
+        @extend .nuevos__row;
+    }
+}
+
+/*SECCION ACCSESORIOS HTML*/
+
+/* CARDS DE PRODUCTOS ACCESORIOS*/
+
+.accesorios{
+    &__row{
+        @extend .nuevos__row;
+    }
+}
+
+/* ELEMENTO DE PAGINACION ACCSESORIOS*/
+
+.paginacionAccesorios{
+    nav{
+        ul{
+            li{
+                .paginacionAccesorios__nav__ul__li__paginaActiva{
+                    background-color:$negro;
+                    color:$blanco;
+                }
+            }
+        }
+    }
+}
+
+
+/* SECCION CARRITO.HTML ----------------------------------------------------------------*/
+
+.carrito{
+    .row{
+        .carrito__row__tusProductos{
+            background-image: linear-gradient(to top, $colorFondoElementos, $blanco);
+        }
+        .carrito__row__datosPersonales{
+            background-color: $colorFondoBody;
+        }
+        
+       .carrito__row__confirm{
+           background-color: $colorFondoElementos;
+          
+       }
+    }
+}
