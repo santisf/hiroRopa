@@ -377,7 +377,9 @@ header .row div {
       .container .container__row--margin .container__row__col--margin {
         border-radius: 8px 8px 0px 0px; }
         .container .container__row--margin .container__row__col--margin a .container__row__col__a__div--margin {
-          padding: 27px 0; } }
+          padding: 27px 0; }
+        .container .container__row--margin .container__row__col--margin a .container__row__div__a__imgSeccionIndex--mobil {
+          min-width: 720px; } }
     .container .container__row--margin .container__row__col--width {
       max-width: 650px; }
     .container .container__row--margin .container__row__col--margin1 {
