@@ -1,23 +1,25 @@
 $tamanioP1:0.8em;
 $tamanioP2:18px;
 $tamanioPCuadrados:0.7em;
+$tamanioH4Cuadrados:21.5px;
 $tamanioTitulos1:35px;
 $navFontSize:15px;
 $letterSpacingSecciones:3px;
 $fontWeightSecciones:600;
 
+/* boton de bootstrap */
 .btn-primary{
     font-size:14px;
 }
 
-
+/* HEADER */
 header{
     .header__nav--fontSize{
         font-size:$navFontSize;
     }
 }
 
-
+/* SECCIONES RECTANGULARES DEL INDEX */
 .container{
     .row{
         div{
@@ -36,11 +38,14 @@ header{
         }
     }
 }
-
+/*CUADRADOS */
 .cuadrados{
     .row{
         div{
             div{
+                h4{
+                    font-size:$tamanioH4Cuadrados;
+                }
                 .cuadrados__row__div__div__texto--tamanio{
                     font-size:$tamanioPCuadrados;
                 }
@@ -49,7 +54,7 @@ header{
     }
 }
 
-/* SECCION NOSOTROS */
+/* SECCION NOSOTROS.HTML */
 
 .nosotros{
     .row.nosotros__row{

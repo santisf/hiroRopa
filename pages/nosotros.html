@@ -29,7 +29,7 @@
                         <a class="nav-link active" href="nuevos.html">NUEVOS</a>
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="indumentaria.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         INDUMENTARIA
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -45,7 +45,7 @@
                         <a class="nav-link" href="nosotros.html">NOSOTROS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="carrito.html">
+                        <a class="nav-link header__row__div__nav__div__ul__li__nav-link--icon" data-toggle="modal" data-target="#modalCarrito" href="carrito.html">
                             <img src="../assets/icons/carrito-de-compras.png">
                         </a>
                     </li>
@@ -59,6 +59,50 @@
           </div>
         </div>
    </header>
+   <!-- Modal Carrito-->
+  <div class="modal fade modalCarrito" id="modalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modalCarrito__margin">
+      <div class="modal-content modalCarrito__div__modalContent">
+        
+          <h3 style="text-align: center;">TUS PRODUCTOS</h3>
+          <div>
+             <hr>
+          </div>
+          <!--------------------------PRIMER PRODUCTO DEL CARRITO !-->
+          <div>
+              <div class="modalCarrito__div__modalContent__div__bodyModalCarrito">
+                  <img src="../assets/img/remeraGrisCalifornia.png" alt="remeraGrisCalifornia" class="img-fluid modalCarrito__div__modalContent__div__bodyModalCarrito__imgModalCarrito">
+                  <div>
+                      <p>Remera California gris - L</p>
+                      <p>$1230</p>
+                  </div>
+              </div>
+              <hr>
+          </div>
+          <!--------------------------SEGUNDO PRODUCTO DEL CARRITO !-->
+          <div>
+            <div class="modalCarrito__div__modalContent__div__bodyModalCarrito">
+                <img src="../assets/img/mochilaBordo.png" alt="mochilaBordo" class="img-fluid modalCarrito__div__modalContent__div__bodyModalCarrito__imgModalCarrito">
+                <div>
+                    <p>Mochila - bordo</p>
+                    <p>$4250</p>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <!----------------------------------------FOOTER DEL CARRITO MODAL DEL INDEX----------------->
+          <div class="modalCarrito__div__modalContent__modalCarritoFooter">
+              <p>
+                  <strong>SUBTOTAL: </strong>$5480
+              </p>
+              <hr>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="carrito.html">VER CARRITO</a></button>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="carrito.html">FINALIZAR COMPRA</a></button>
+          </div>
+        
+      </div>
+    </div>
+  </div>
    <!--------------------------------------------------------------TITULO DE SECCION NOSOTROS----------------------------------------------------->
    <br>
    <section class="container nosotros nosotros--sombra">
@@ -83,7 +127,7 @@
             </p>
        </div>
         <!--------------------------------------------------------------IMAGEN CON LOGO    !-->
-       <div class="row nosotros__row--parallax" data-aos="zoom-in-up" data-aos-duration="1300">
+       <div class="row nosotros__row--parallax">
            <!--<img src="../assets/img/imagenNosotros.jpg" alt="nosotros" class="nosotros__row__img--parallax">!-->
            <a href="../index.html">
                 <img src="../assets/img/logoClaroTipo2.png" alt="logoNosotros" class="nosotros__row__a__imgLogoNosotros" 
@@ -102,15 +146,26 @@
    <!--                            footer                                -->
 <footer class="container-fluid footer" data-aos="fade-up">
     <div class="row">
-        <div class="col-lg-4 col-xs-4">
+        <div class="col-lg-3">
+            <ul>
+               <li><h6>SHOP</h6></li>
+               <li><a href="remeras.html">REMERAS</a></li>
+               <li><a href="buzos.html">BUZOS</a></li>
+               <li><a href="accesorios.html">ACCESORIOS</a></li>
+               <hr>
+            </ul>
+         </div>
+        <div class="col-lg-3">
             <ul>
                 <li><h6>SOPORTE</h6></li>
                 <li>PREGUNTAS FRECUENTES</li>
-                <li>CARRITO</li>
+                <li><a href="carrito.html">CARRITO</a></li>
+                <li><a href="nosotros.html">EMPRESA</a></li>
+                <li><a href="contacto.html">CONTACTANOS</a></li>
                 <hr>
             </ul>
         </div>
-        <div class="col-lg-4 col-xs-4">
+        <div class="col-lg-3">
              <ul>
                  <li><h6>NOVEDADES</h6></li>
                  <li>
@@ -124,21 +179,20 @@
                  <hr>   
              </ul>
          </div>
-         <div class="col-lg-4 col-xs-4">
+         <div class="col-lg-3">
              <ul>
                  <li><h6>SEGUINOS</h6></li>
                  <br>
                  <li>
-                   <a href="https://instragram.com"><img src="../assets/icons/instagram.png" class="redes"></a>
-                   <a href="https://facebook.com"><img src="../assets/icons/facebook.png" class="redes"></a>
-                   <a href="https://youtube.com"><img src="../assets/icons/youtube.png"class="redesY"></a>
+                   <a href="https://instragram.com"><img src="../assets/icons/instagram.png" class="footer__row__div__ul__li__a__icon"></a>
+                   <a href="https://facebook.com"><img src="../assets/icons/facebook.png" class="footer__row__div__ul__li__a__icon"></a>
+                   <a href="https://youtube.com"><img src="../assets/icons/youtube.png"class="footer__row__div__ul__li__a__icon"></a>
                  </li>
                  <hr>
              </ul>
          </div>
     </div>
 </footer>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
  AOS.init();

@@ -1,9 +1,12 @@
+/* boton de bootstrap */
 .btn-primary {
   font-size: 14px; }
 
+/* HEADER */
 header .header__nav--fontSize {
   font-size: 15px; }
 
+/* SECCIONES RECTANGULARES DEL INDEX */
 .container .row div a div .container__row__col__a__div__title--tamanio {
   font-size: 35px;
   letter-spacing: 3px;
@@ -12,10 +15,14 @@ header .header__nav--fontSize {
 .container .row div a div .container__row__col__a__div__p--tamanio {
   font-size: 0.8em; }
 
+/*CUADRADOS */
+.cuadrados .row div div h4 {
+  font-size: 21.5px; }
+
 .cuadrados .row div div .cuadrados__row__div__div__texto--tamanio {
   font-size: 0.7em; }
 
-/* SECCION NOSOTROS */
+/* SECCION NOSOTROS.HTML */
 .nosotros .row.nosotros__row .nosotros__row__div__titulo {
   font-size: 35px;
   letter-spacing: 3px;
@@ -354,6 +361,10 @@ a:hover {
 .carrito .row .carrito__row__confirm {
   filter: drop-shadow(0 0 5px #333); }
 
+body {
+  overflow-x: hidden; }
+
+/* ------------------HEADER-----------------------------------------*/
 header .row div {
   padding: 0; }
   header .row div nav a {
@@ -363,6 +374,11 @@ header .row div {
   header .row div nav div ul li .header__row__div__nav__div__ul__li__nav-link--icon {
     padding-top: 6px;
     margin-right: 16px; }
+  header .row div nav div form {
+    /* modificar el minimo para que no ocupe todo el ancho en dispositivos mas chicos que small - modificado en la clase de bootstrap*/ }
+    header .row div nav div form .mr-sm-2 {
+      max-width: 200px;
+      margin-right: 0.5rem; }
 
 /* SECCIONES DEL INDEX */
 @media only screen and (max-width: 991px) {
@@ -437,6 +453,21 @@ header .row div {
       top: 63%;
       left: 50%;
       transform: translate(-50%, -50%); }
+    @media only screen and (max-width: 575px) {
+      .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position .cuadrados__row__div__div__h4--position {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+      .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position .cuadrados__row__div__div__span--position {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+      .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position .cuadrados__row__div__div__texto--position {
+        display: none; }
+      .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position .cuadrados__row__div__div__texto1--position {
+        display: none; } }
   .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position:hover {
     transform: scale(1.025, 1.025); }
 

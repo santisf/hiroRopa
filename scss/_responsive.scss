@@ -10,6 +10,11 @@ $paddingTitulosMobil:27px 0;
 $marginTopFooter:2.5rem;
 
 
+body{
+    overflow-x: hidden;
+}
+
+/* ------------------HEADER-----------------------------------------*/
 
 header{
     
@@ -30,6 +35,13 @@ header{
                                 padding-top:6px;
                                 margin-right:16px;
                             }
+                        }
+                    }
+                    form{
+                        /* modificar el minimo para que no ocupe todo el ancho en dispositivos mas chicos que small - modificado en la clase de bootstrap*/
+                        .mr-sm-2{
+                            max-width: 200px;
+                            margin-right: 0.5rem;
                         }
                     }
                 }
@@ -144,21 +156,42 @@ header{
                 
                     .cuadrados__row__div__div__h4--position{
                         
-                        @include posicionElementosCuadrado(20%,50%)
+                        @include posicionElementosCuadrado(20%,50%);
                        
                                               
                     }
                     .cuadrados__row__div__div__span--position{
-                        @include posicionElementosCuadrado(45%,50%)
+                        @include posicionElementosCuadrado(45%,50%);
                           
                     }
                     .cuadrados__row__div__div__texto--position{
-                        @include posicionElementosCuadrado(81%,50%)
+                        @include posicionElementosCuadrado(81%,50%);
                         
                     }
                     .cuadrados__row__div__div__texto1--position{
-                        @include posicionElementosCuadrado(63%,50%)
+                        @include posicionElementosCuadrado(63%,50%);
                         
+                    }
+                    @media only screen and (max-width:575px){
+                        .cuadrados__row__div__div__h4--position{
+                        
+                            @include posicionElementosCuadrado(25%,50%)
+                           
+                                                  
+                        }
+                        .cuadrados__row__div__div__span--position{
+                            @include posicionElementosCuadrado(65%,50%)
+                              
+                        }
+                        .cuadrados__row__div__div__texto--position{
+                            display:none;
+                            
+                        }
+                        .cuadrados__row__div__div__texto1--position{
+                            display:none;
+                            
+                        }   
+
                     }
                     
             }
@@ -173,6 +206,7 @@ header{
 .footer{
    margin-top:$marginTopFooter;
     .row{
+       
         div{
             display:flex;
             justify-content: center;
