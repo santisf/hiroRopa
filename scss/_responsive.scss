@@ -217,6 +217,17 @@ header{
                 text-align: center;
                 
                 li{
+                    /*PLACEHOLDER DEL NEWSLETTER DEL FOOTER */
+                    form{
+                        div{
+                            .form-control{
+                                text-align: center;
+                            }
+                            .form-control::placeholder{
+                                text-align: center;
+                            }
+                        }
+                    }
                     a{
                         .footer__row__div__ul__li__a__icon{
                             transition:all $tiempoDeTransicion1;
@@ -235,6 +246,9 @@ header{
     }
     
 }
+
+
+
 
 /* cards de productos - nuevos.html */ 
 

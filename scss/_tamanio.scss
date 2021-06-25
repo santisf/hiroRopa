@@ -72,3 +72,17 @@ header{
         font-size: $tamanioP2;
     }
 }
+
+/*--------------------------------FOOTER----------------------*/
+.footer{
+    .row{
+        div{
+            ul{
+                .footer__row__div__ul__pNovedades{
+                    font-size:$tamanioPCuadrados;
+                    
+                }
+            }
+        }
+    }
+}
