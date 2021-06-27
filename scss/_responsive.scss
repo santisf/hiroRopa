@@ -9,7 +9,12 @@ $hoverScale:scale(1.025,1.025);
 $paddingTitulosMobil:27px 0;
 $marginTopFooter:2.5rem;
 
-
+/*---------------------------------------------------BOOTRSTRAP CONTAINER EN MOBIL-----------------------------------------*/
+@media only screen and (max-width:575px){
+    .container{
+        width:92%;
+    }
+}
 body{
     overflow-x: hidden;
 }
@@ -269,6 +274,11 @@ header{
         margin-bottom: $espacioEntreFilas;
         
         div{
+            div{
+                .contacto__row__div__div__iframe--ancho{
+                    min-height: 259px;
+                }
+            }
             .contacto__row__div__infoContacto{
                 padding:20px;
                 border-radius:$bordeRedondoLeft;
@@ -336,7 +346,7 @@ header{
 
         /* Set a specific height */
 
-        height: 650px;
+        height: 574px;
         border-radius: $bordeRedondoBot;
         
 

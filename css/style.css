@@ -365,6 +365,11 @@ a:hover {
 .carrito .row .carrito__row__confirm {
   filter: drop-shadow(0 0 5px #333); }
 
+/*---------------------------------------------------BOOTRSTRAP CONTAINER EN MOBIL-----------------------------------------*/
+@media only screen and (max-width: 575px) {
+  .container {
+    width: 92%; } }
+
 body {
   overflow-x: hidden; }
 
@@ -507,6 +512,8 @@ header .row div {
   padding: 0; }
   .contacto .row.contacto__row--margin {
     margin-bottom: 25px; }
+    .contacto .row.contacto__row--margin div div .contacto__row__div__div__iframe--ancho {
+      min-height: 259px; }
     .contacto .row.contacto__row--margin div .contacto__row__div__infoContacto {
       padding: 20px;
       border-radius: 8px 0 0 8px; }
@@ -544,7 +551,7 @@ header .row div {
   /* The image used */
   background-image: url("../assets/img/imagenNosotros.jpg");
   /* Set a specific height */
-  height: 650px;
+  height: 574px;
   border-radius: 0px 0px 8px 8px;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
