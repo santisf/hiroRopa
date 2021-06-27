@@ -6,13 +6,13 @@ $bordeRedondoRight:0 8px 8px 0;
 $bordeRedondoTop:8px 8px 0px 0px;
 $bordeRedondoBot:0px 0px 8px 8px;
 $hoverScale:scale(1.025,1.025);
-$paddingTitulosMobil:27px 0;
+$paddingTitulosMobil:18px 0;
 $marginTopFooter:2.5rem;
 
 /*---------------------------------------------------BOOTRSTRAP CONTAINER EN MOBIL-----------------------------------------*/
 @media only screen and (max-width:575px){
     .container{
-        width:92%;
+        width:91.5%;
     }
 }
 body{

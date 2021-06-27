@@ -368,7 +368,7 @@ a:hover {
 /*---------------------------------------------------BOOTRSTRAP CONTAINER EN MOBIL-----------------------------------------*/
 @media only screen and (max-width: 575px) {
   .container {
-    width: 92%; } }
+    width: 91.5%; } }
 
 body {
   overflow-x: hidden; }
@@ -409,11 +409,11 @@ header .row div {
     .container .container__row--margin .container__row__col--margin {
       border-radius: 8px 8px 0px 0px; }
       .container .container__row--margin .container__row__col--margin a .container__row__col__a__div--margin {
-        padding: 27px 0; } }
+        padding: 18px 0; } }
   .container .container__row--margin .container__row__col--margin1 {
     border-radius: 0 8px 8px 0; }
     .container .container__row--margin .container__row__col--margin1 a .container__row__col__a__div--margin {
-      padding: 27px 0; }
+      padding: 18px 0; }
   @media only screen and (max-width: 991px) {
     .container .container__row--margin .container__row__col--margin1 {
       border-radius: 0px 0px 8px 8px; } }
@@ -538,7 +538,7 @@ header .row div {
   margin-top: 25px;
   border-radius: 8px 8px 0px 0px; }
   .nosotros .row.nosotros__row .nosotros__row__div {
-    padding: 27px 0; }
+    padding: 18px 0; }
     .nosotros .row.nosotros__row .nosotros__row__div .nosotros__row__div__titulo {
       text-align: center; }
     .nosotros .row.nosotros__row .nosotros__row__div .nosotros__row__div__p {
