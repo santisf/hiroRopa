@@ -448,6 +448,7 @@ header .row div {
     position: relative;
     display: inline-block;
     text-align: center;
+    justify-content: center;
     transition: 0.3s; }
     .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position .cuadrados__row__div__div__h4--position {
       position: absolute;

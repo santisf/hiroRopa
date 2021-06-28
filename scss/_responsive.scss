@@ -169,7 +169,9 @@ header{
             .cuadrados__row__div__div--position{
                 position:relative;
                 display:inline-block;
-                text-align:center;
+                text-align: center;
+                justify-content: center;
+                
                 transition:$tiempoDeTransicion1;
             
                 
