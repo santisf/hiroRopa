@@ -82,7 +82,7 @@ header{
     
     .container__row--margin{
         margin-top:$espacioEntreFilas;
-        margin-bottom:($espacioEntreFilas)-20px;
+        margin-bottom:($espacioEntreFilas);
         @media only screen and (max-width:991px){
             max-width:665px;
         }
@@ -159,8 +159,9 @@ header{
 }
 .cuadrados{
     .container__rowCuadrados{
+        
         .cuadrados__row__col--margin{
-            margin-top:$espacioEntreFilas;
+            
             padding:7px;
             
              

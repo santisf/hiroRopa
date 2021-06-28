@@ -405,7 +405,7 @@ header .row div {
 
 .container .container__row--margin {
   margin-top: 25px;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
   /* COLUMNA DE BUZOS */ }
   @media only screen and (max-width: 991px) {
     .container .container__row--margin {
@@ -443,7 +443,6 @@ header .row div {
 /* CUADRADOS DEL INDEX */
 /* mixin para posicionar elementos dentro del cuadrado*/
 .cuadrados .container__rowCuadrados .cuadrados__row__col--margin {
-  margin-top: 25px;
   padding: 7px; }
   .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position {
     position: relative;
