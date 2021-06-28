@@ -10,13 +10,20 @@ $paddingTitulosMobil:18px 0;
 $marginTopFooter:2.5rem;
 
 /*---------------------------------------------------BOOTRSTRAP CONTAINER -----------------------------------------*/
-.container{
-   
-}
-@media only screen and (max-width:575px){
+
+/* soluccion para el overflow en x (error de la librera aos para los fade left y fade right en dispositivos mobil */
+@media only screen and (max-width:800px){
     .container{
         width:95%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        .row{
+            margin-left:auto;
+            margin-right:auto;
+            margin-top:10px;
+        }   
     }
+   
 }
 
 body{
@@ -185,12 +192,12 @@ header{
                     @media only screen and (max-width:575px){
                         .cuadrados__row__div__div__h4--position{
                         
-                            @include posicionElementosCuadrado(25%,50%)
+                            @include posicionElementosCuadrado(30%,50%)
                            
                                                   
                         }
                         .cuadrados__row__div__div__span--position{
-                            @include posicionElementosCuadrado(65%,50%)
+                            @include posicionElementosCuadrado(70%,50%)
                               
                         }
                         .cuadrados__row__div__div__texto--position{
@@ -495,7 +502,7 @@ header{
                 .carrito__row__div__div__productosCarrito{
                     display:flex;
                     &__img{
-                        width:280px;
+                        width:250px;
                         margin-right:10px;
                     }
 

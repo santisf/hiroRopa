@@ -366,12 +366,16 @@ a:hover {
   filter: drop-shadow(0 0 5px #333); }
 
 /*---------------------------------------------------BOOTRSTRAP CONTAINER -----------------------------------------*/
-.container {
-  overflow-x: hidden; }
-
-@media only screen and (max-width: 575px) {
+/* soluccion para el overflow en x (error de la librera aos para los fade left y fade right en dispositivos mobil */
+@media only screen and (max-width: 800px) {
   .container {
-    width: 95%; } }
+    width: 95%;
+    overflow-x: hidden;
+    overflow-y: hidden; }
+    .container .row {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px; } }
 
 body {
   overflow-x: hidden; }
@@ -468,12 +472,12 @@ header .row div {
     @media only screen and (max-width: 575px) {
       .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position .cuadrados__row__div__div__h4--position {
         position: absolute;
-        top: 25%;
+        top: 30%;
         left: 50%;
         transform: translate(-50%, -50%); }
       .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position .cuadrados__row__div__div__span--position {
         position: absolute;
-        top: 65%;
+        top: 70%;
         left: 50%;
         transform: translate(-50%, -50%); }
       .cuadrados .container__rowCuadrados .cuadrados__row__col--margin .cuadrados__row__div__div--position .cuadrados__row__div__div__texto--position {
@@ -624,7 +628,7 @@ header .row div {
 .carrito .row div div .carrito__row__div__div__productosCarrito {
   display: flex; }
   .carrito .row div div .carrito__row__div__div__productosCarrito__img {
-    width: 280px;
+    width: 250px;
     margin-right: 10px; }
 
 .carrito .row div .carrito__row__div__pieCarrito {
