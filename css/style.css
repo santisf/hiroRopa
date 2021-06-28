@@ -365,10 +365,13 @@ a:hover {
 .carrito .row .carrito__row__confirm {
   filter: drop-shadow(0 0 5px #333); }
 
-/*---------------------------------------------------BOOTRSTRAP CONTAINER EN MOBIL-----------------------------------------*/
+/*---------------------------------------------------BOOTRSTRAP CONTAINER -----------------------------------------*/
+.container {
+  overflow-x: hidden; }
+
 @media only screen and (max-width: 575px) {
   .container {
-    width: 91.5%; } }
+    width: 95%; } }
 
 body {
   overflow-x: hidden; }
@@ -595,6 +598,9 @@ header .row div {
 .bodyCarrito {
   overflow-x: hidden; }
 
+.carrito .row div div .carrito__row__div__div__productosCarrito__texto {
+  font-size: 1em; }
+
 .carrito .row .carrito__row__tusProductos {
   border-radius: 8px 0 0 0; }
 
@@ -618,7 +624,7 @@ header .row div {
 .carrito .row div div .carrito__row__div__div__productosCarrito {
   display: flex; }
   .carrito .row div div .carrito__row__div__div__productosCarrito__img {
-    width: 300px;
+    width: 280px;
     margin-right: 10px; }
 
 .carrito .row div .carrito__row__div__pieCarrito {

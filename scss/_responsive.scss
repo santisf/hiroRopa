@@ -9,16 +9,20 @@ $hoverScale:scale(1.025,1.025);
 $paddingTitulosMobil:18px 0;
 $marginTopFooter:2.5rem;
 
-/*---------------------------------------------------BOOTRSTRAP CONTAINER EN MOBIL-----------------------------------------*/
+/*---------------------------------------------------BOOTRSTRAP CONTAINER -----------------------------------------*/
+.container{
+    overflow-x: hidden;
+}
 @media only screen and (max-width:575px){
     .container{
-        width:91.5%;
+        width:95%;
     }
 }
 
 body{
-    overflow-x: hidden!important;
+    overflow-x: hidden;
 }
+
 
 /* ------------------HEADER-----------------------------------------*/
 
@@ -440,7 +444,13 @@ header{
 }
 .carrito{
     .row{
-        
+        div{
+            div{
+                .carrito__row__div__div__productosCarrito__texto{
+                    font-size:1em;
+                }
+            }
+        }
         .carrito__row__tusProductos{
             border-radius: 8px 0 0 0;
             
@@ -485,7 +495,7 @@ header{
                 .carrito__row__div__div__productosCarrito{
                     display:flex;
                     &__img{
-                        width:300px;
+                        width:280px;
                         margin-right:10px;
                     }
 
