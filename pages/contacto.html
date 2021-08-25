@@ -59,6 +59,27 @@
               </nav>
           </div>
         </div>
+
+    <!-- MENSAJE DE VALIDACION DEL FORMULARIO DE CONTACTO -------------------------------------->
+    <div class="container-fluid sticky-top"><div class="row"><div class="col-12" id="mensajeValidarFormContacto"></div></div></div>
+    
+    <style>
+        #mensajeValidarFormContacto {
+            
+            
+            color: white;
+            background-color: black;
+            font-size: 18px;
+            font-weight: bold;
+            border :solid red;
+            text-align: center;
+            display:none;
+            box-sizing: border-box;
+            margin:20px;
+            max-width: 97%;
+            
+        }
+    </style>
    </header>
    <!-- Modal Carrito-->
   <div class="modal fade modalCarrito" id="modalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -104,6 +125,8 @@
       </div>
     </div>
   </div>
+
+  
    <!--------------------------------------------------------------TITULO DE SECCION CONTACTO----------------------------------------------------->
    <div class="container">
        <div class="row">
@@ -117,6 +140,7 @@
            </div>
        </div>
    </div>
+
 
    <section class="container contacto">
        <div class="row contacto__row--margin">
@@ -135,31 +159,35 @@
            <div class="col-xl-6 col-12" data-aos="fade-up">
             <form class="contacto__row__div__form contacto__row__div__form--shadow">
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">NOMBRE</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre y apellido">
+                    <label for="formContactoNombre">NOMBRE</label>
+                    <input type="text" class="form-control" id="formContactoNombre" placeholder="Nombre y apellido">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">MAIL</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <label for="formContactoMail">MAIL</label>
+                    <input type="email" class="form-control" id="formContactoMail" placeholder="name@example.com">
                   </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">TELEFONO</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Número de telefono">
+                    <label for="formContactoTel">TELEFONO</label>
+                    <input type="tel" value="(+54) " class="form-control" id="formContactoTel" placeholder="Número de telefono">
                 </div>
               
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">MENSAJE</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Escriba su mensaje" rows="3"></textarea>
+                    <label for="formContactoMsj">MENSAJE</label>
+                    <textarea class="form-control" id="formContactoMsj" placeholder="Escriba su mensaje" rows="3"></textarea>
                 </div>
 
                 <div class="form-group">
-                        <button type="submit" class="btn btn-primary">ENVIAR</button>
+                    
+                    <button type="submit" value="Enviar" id="btnFormContactoSubmit"class="btn btn-primary">ENVIAR</button>
+                    
                 </div>
 
               </form>
               <hr>
            </div>
        </div>
+       
+
        <div class="row">
            <div class="col-9" data-aos="fade-up-left" data-aos-duration="1200">
                 <a href="../index.html">
@@ -199,7 +227,7 @@
                  <li>
                      <form>
                          <div class="form-group">
-                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="   Correo electronico">
+                             <input type="email" class="form-control" id="formNovedadesMail" aria-describedby="emailHelp" placeholder="   Correo electronico">
                          </div>
                          <button type="submit" class="btn btn-primary">SUSCRIBIRSE</button>
                      </form>
@@ -227,6 +255,7 @@
 <script>
  AOS.init();
 </script>
+<script src="../js/main.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>
