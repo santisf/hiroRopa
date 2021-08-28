@@ -324,36 +324,52 @@ document.write(`<div class="row remeras__row">`)
                     const select = document.createElement('select');
                     select.classList.add("custom-select");
                     
-
+                    
                         const optionSelected = document.createElement('option');
+                        optionSelected.selected = "selected";
                         optionSelected.textContent = "Talle";
 
+                        //HIJOS DEL SELECTOR DE TALLES SELECT
+                        select.appendChild(optionSelected);
+
+                        if(remera.talle[0][0]>0){
                         const optionS = document.createElement('option');
                         optionS.value = "S";
                         optionS.textContent= remera.talle[0][1];
 
+                        //HIJOS DEL SELECTOR DE TALLES SELECT
+                        select.appendChild(optionS);
+                        }
+
+                        if(remera.talle[1][0]>0){
                         const optionM = document.createElement('option');
                         optionM.value = "M";
                         optionM.textContent= remera.talle[1][1];
 
+                        //HIJOS DEL SELECTOR DE TALLES SELECT
+                        select.appendChild(optionM);
+                        }
+
+                        if(remera.talle[2][0]>0){
                         const optionL = document.createElement('option');
                         optionL.value = "L";
                         optionL.textContent= remera.talle[2][1];
 
+                        //HIJOS DEL SELECTOR DE TALLES SELECT
+                        select.appendChild(optionL);
+                        }
+
+                        if(remera.talle[3][0]>0){
                         const optionXL = document.createElement('option');
                         optionXL.value = "XL";
                         optionXL.textContent= remera.talle[3][1];
 
-
-                    //HIJOS DEL SELECTOR DE TALLES SELECT
-                    select.appendChild(optionSelected);
-                    select.appendChild(optionS);
-                    select.appendChild(optionM);
-                    select.appendChild(optionL);
-                    select.appendChild(optionXL);
+                        //HIJOS DEL SELECTOR DE TALLES SELECT
+                        select.appendChild(optionXL);
+                        }
 
 
-
+                    
                     //DIV FINAL DEL CARD CON EL BOTON AÑADIR
                     const div3 = document.createElement('div');
                     div3.classList.add("input-group-append");
