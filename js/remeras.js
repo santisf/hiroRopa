@@ -154,7 +154,7 @@ arrayRemerasOrdenFecha.forEach((remeraFecha) => {
 
     })
 
-    remerasOrdenFecha1.push(arr[0]);
+    remerasOrdenFecha1.unshift(arr[0]);
     
 
 });
