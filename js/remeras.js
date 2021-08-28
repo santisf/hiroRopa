@@ -56,7 +56,7 @@ const remera4 = new Prenda("Remera gris - underwather",
  20210927,
  true,
  [[1,"S"], [0,"M"], [1,"L"],[1,"XL"]],
- 1130,
+ 1100,
 ["../assets/img/remeraGrisUnderwater.png", "remeraGrisUnderwater"],
 );
 
@@ -195,6 +195,13 @@ arrayRemerasOrdenPrecio = ordenarRemerasPrecio();
 let remerasOrdenPrecio1=[];
 let remerasOrdenPrecioDesc=[];
 
+
+//ALGORITMO FOREACH PARA LLENAR EL ARRAY remerasOrdenPrecio1 Y remerasOrdenPrecioDesc 
+
+//CON LOS OBJETOS REMERAS ORDENADOS POR PRECIO
+
+
+
 arrayRemerasOrdenPrecio.forEach((remeraPrecio) => {
 
    
@@ -207,11 +214,44 @@ arrayRemerasOrdenPrecio.forEach((remeraPrecio) => {
         }
 
     })
+    console.log(arr);
 
-    remerasOrdenPrecio1.push(arr[0]);
-    remerasOrdenPrecioDesc.unshift(arr[0]);
+    if(arr.length>1){
+        
+        if(remerasOrdenPrecio1.length>0){
+
+            if(arr[0].precio != remerasOrdenPrecio1[remerasOrdenPrecio1.length - 1].precio){
+
+                for(let s=0; s < arr.length; s += 1){
+
+                    remerasOrdenPrecio1.push(arr[s]);
+                    remerasOrdenPrecioDesc.unshift(arr[s]);
+        
+                }
+
+            }
+            
+        }else{
+
+            for(let s=0; s < arr.length; s += 1){
+
+                remerasOrdenPrecio1.push(arr[s]);
+                remerasOrdenPrecioDesc.unshift(arr[s]);
     
+            }
 
+        }
+                
+   
+            
+    }else{
+
+        remerasOrdenPrecio1.push(arr[0]);
+        remerasOrdenPrecioDesc.unshift(arr[0]);
+
+    }
+    
+    
 });
 
 
