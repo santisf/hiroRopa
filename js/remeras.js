@@ -293,8 +293,16 @@ function seleccionarOrden(){
 }
 
 
+//FUNCION PARA CONVERTIR LA FECHA DEL OBJETO EN UN TEXTO PARA EL HTML
+function convertirFechaTexto(fecha){
 
-
+    let fechaString = fecha.toString();
+    let dia = fechaString.charAt(6)+fechaString.charAt(7)+"/";
+    let mes = fechaString.charAt(4)+fechaString.charAt(5)+"/";
+    let año = fechaString.charAt(0)+fechaString.charAt(1)+fechaString.charAt(2)+fechaString.charAt(3);
+    let fechaTexto = dia + mes + año;
+    return fechaTexto;
+}
 
 
 //FUNCION PARA MOSTRAR PRENDAS REMERAS DENTRO DE REMERAS.HTML
@@ -347,6 +355,11 @@ document.write(`<div class="row remeras__row">`)
                 const precio = document.createElement('p');
                 precio.classList.add("card-text");
                 precio.textContent = `$${remera.precio}`;
+
+                //FECHA  - ATRIBUTO FECHA DE LA PRENDA
+                const fecha = document.createElement('p');
+                fecha.classList.add("card-text");
+                fecha.textContent = `fecha de ingreso: ${convertirFechaTexto(remera.fecha)}`;
 
                 //UN HR PARA SEPARAR CONTENIDO
                 const hr = document.createElement('hr');
@@ -444,6 +457,7 @@ document.write(`<div class="row remeras__row">`)
             //HIJOS DIV1 CARD BODY
             div1.appendChild(titulo);
             div1.appendChild(precio);
+            div1.appendChild(fecha);
             div1.appendChild(hr);
             div1.appendChild(div2);
 
