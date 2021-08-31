@@ -551,7 +551,13 @@ header{
         margin: 0 0 auto auto;   
     }
     div{
-        
+        position: relative;
+        .buttonXmodalCarrito{
+            position:absolute;
+            top:1%;
+            
+            left:225px;
+        }
         
         .modalCarrito__div__modalContent{
             padding:20px;
@@ -559,11 +565,15 @@ header{
         
             div{
                 
+                
+
                 .modalCarrito__div__modalContent__div__bodyModalCarrito{
                     display:flex;
                     
+                   
                    &__imgModalCarrito{
-                        width:150px;
+                        max-width:150px;
+                        max-height: 150px;
                         margin-right:10px;
                    }
                 }

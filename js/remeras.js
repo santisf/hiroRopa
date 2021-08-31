@@ -539,7 +539,7 @@ function clickAniadirCarrito(remera,select){
         remeraEnCarrito.talle.push({"stock":1,"talle":"M"});
     }
 
-    if(talleSeleccionado.value=="L"){
+    if(talleSeleccionado=="L"){
 
         
         remeraEnCarrito.talle.push({"stock":1,"talle":"L"});
@@ -561,6 +561,7 @@ function clickAniadirCarrito(remera,select){
 
         for(let y=0;y<remeraEnCarrito1.talle.length;y++){
 
+            
             if(remeraEnCarrito1.talle[y].talle==remeraEnCarrito.talle[0].talle){
                 remeraEnCarrito.talle[0].stock=remeraEnCarrito1.talle[y].stock+1;
                 remeraEnCarrito1.talle.splice(y,1);
@@ -644,6 +645,188 @@ function mensajeAniadirCarrito(){
 
 
     setTimeout(esconderMsjAniadirCarrito,2000);
+
+    }
+
+    let modalCarritoHTML = document.querySelector(".modalCarrito__div__modalContent");
+    let iconoCarritoHeader = document.querySelector(".header__row__div__nav__div__ul__li__nav-link--icon");
+    iconoCarritoHeader.addEventListener("click", generarModalCarrito)
+
+
+
+    function generarModalCarrito(){
+        modalCarritoHTML.innerHTML="";
+        let h3=document.createElement("h3");
+        h3.style.textAlign = "center";
+        h3.textContent="TUS PRODUCTOS";
+
+        let k= document.createElement("div");
+
+            let hr0= document.createElement("hr");
+
+        k.appendChild(hr0);
+        
+        let total=0;
+        modalCarritoHTML.appendChild(h3);
+        modalCarritoHTML.appendChild(k);
+
+        for(let i = 0 ; i< localStorage.length; i++){
+
+            let clave=localStorage.key(i);
+            let item = JSON.parse(localStorage[`${clave}`])
+            function modalCarrito(){
+
+               
+                let divContenedor = document.createElement("div");
+                
+        
+                    let div1 = document.createElement("div");
+                    div1.classList.add("modalCarrito__div__modalContent__div__bodyModalCarrito");
+        
+                        let img = document.createElement("img");
+                        img.src = item.img[0];
+                        img.alt = item.img[1];
+                        img.classList.add("img-fluid");
+                        img.classList.add("modalCarrito__div__modalContent__div__bodyModalCarrito__imgModalCarrito");
+        
+                        let div2= document.createElement("div");
+
+                            let buttonX = document.createElement("button");
+                            buttonX.classList.add("btn-primary");
+                            buttonX.classList.add("buttonXmodalCarrito");
+                            buttonX.type="button";
+                            buttonX.textContent="X";
+                            buttonX.style.justifyContent="right";
+                            buttonX.addEventListener("click",eliminarElementoCarrito);
+                            buttonX.addEventListener("click",refreshFooterModal);
+
+                            function eliminarElementoCarrito(){
+
+                                total=total-item.precio;
+                                console.log(total);
+                                divContenedor.innerHTML="";
+                                localStorage.removeItem(clave);
+                                
+                                
+                            }
+            
+                            let titulo = document.createElement("p");
+                            titulo.textContent = item.nombre;
+        
+                            let precio = document.createElement("p");
+                            precio.textContent = `$ ${item.precio}`;
+
+                            let cantidad= document.createElement("div");
+
+                            for(let talle of item.talle){
+
+                                let cantidad1= document.createElement("p");
+                                cantidad1.textContent+=`cantidad: ${talle.stock} de talle: ${talle.talle}`;
+                                cantidad.appendChild(cantidad1);
+                                
+                            }
+
+
+        
+                        div2.appendChild(titulo);
+                        div2.appendChild(precio);
+                        div2.appendChild(cantidad);
+                        div2.appendChild(buttonX);
+                        
+        
+                    div1.appendChild(img);
+                    div1.appendChild(div2);
+
+                    let hr = document.createElement("hr");
+        
+                divContenedor.appendChild(div1);
+                divContenedor.appendChild(hr);
+                modalCarritoHTML.appendChild(divContenedor);
+            }
+
+            modalCarrito();
+            total+=item.precio;
+
+        }
+
+       
+        let footer = document.createElement("div");
+        footer.classList.add("modalCarrito__div__modalContent__modalCarritoFooter");
+
+            let pFooter = document.createElement("p");
+
+                let strong = document.createElement("strong");
+                strong.textContent=`SUBTOTAL: ${total}`;
+
+            pFooter.appendChild(strong);
+
+            let hr5= document.createElement("hr");
+
+            let button1 = document.createElement("button");
+            button1.classList.add("btn");
+            button1.classList.add("btn-outline-success");
+            button1.classList.add("my-2");
+            button1.classList.add("my-sm-0");
+            button1.type="button";
+
+                let a1= document.createElement("a");
+                a1.href="carrito.html";
+                a1.textContent="VER CARRITO";
+
+            button1.appendChild(a1);
+
+        
+        footer.appendChild(pFooter);
+        footer.appendChild(hr5);
+        footer.appendChild(button1);
+        modalCarritoHTML.appendChild(footer);
+
+
+        function refreshFooterModal(){
+
+            footer.innerHTML="";
+            footer.classList.add("modalCarrito__div__modalContent__modalCarritoFooter");
+
+                let pFooter = document.createElement("p");
+
+                    let strong = document.createElement("strong");
+                    strong.textContent=`SUBTOTAL: ${total}`;
+
+                pFooter.appendChild(strong);
+
+                let hr5= document.createElement("hr");
+
+                let button1 = document.createElement("button");
+                button1.classList.add("btn");
+                button1.classList.add("btn-outline-success");
+                button1.classList.add("my-2");
+                button1.classList.add("my-sm-0");
+                button1.type="button";
+
+                    let a1= document.createElement("a");
+                    a1.href="carrito.html";
+                    a1.textContent="VER CARRITO";
+
+                button1.appendChild(a1);
+
+            
+            footer.appendChild(pFooter);
+            footer.appendChild(hr5);
+            footer.appendChild(button1);
+            modalCarritoHTML.appendChild(footer);
+            
+        }
+        /*
+        <!----------------------------------------FOOTER DEL CARRITO MODAL DEL INDEX----------------->
+          <div class="modalCarrito__div__modalContent__modalCarritoFooter">
+              <p>
+                  <strong>SUBTOTAL: </strong>$5480
+              </p>
+              <hr>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="carrito.html">VER CARRITO</a></button>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="carrito.html">FINALIZAR COMPRA</a></button>
+          </div>
+          */
 
     }
 
