@@ -25,82 +25,82 @@ class Prenda {
 
 // CREACION DE CADA PRODUCTO OBJETO PRENDA
 const remera1 = new Prenda("Remera gris - california",
- 1,
+ "1",
  20200127,
  true,
- [[1,"S"], [1,"M"], [1,"L"],[1,"XL"]],
+ [{"stock":1,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":1,"talle":"L"},{"stock":1,"talle":"XL"}],
  1230,
 ["../assets/img/remeraGrisCalifornia.png", "remeraGrisCalifornia"],
 );
 
 const remera2 = new Prenda("Remera rosa - don't touch",
- 2,
+ "2",
  20200213,
  true,
- [[0,"S"], [1,"M"], [0,"L"],[1,"XL"]],
+ [{"stock":0,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":1,"talle":"L"},{"stock":1,"talle":"XL"}],
  1100,
 ["../assets/img/remeraRosaDontTouch.png", "remeraRosaDontTouch"],
 );
 
 const remera3 = new Prenda("Remera gris - corazón",
- 1,
+ "3",
  20200117,
  true,
- [[1,"S"], [1,"M"], [0,"L"],[1,"XL"]],
+ [{"stock":1,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":1,"talle":"L"},{"stock":0,"talle":"XL"}],
  1200,
 ["../assets/img/remeraGrisCorazon.png", "remeraGrisCorazon"],
 );
 
 const remera4 = new Prenda("Remera gris - underwather",
- 1,
+ "4",
  20210927,
  true,
- [[1,"S"], [0,"M"], [1,"L"],[1,"XL"]],
+ [{"stock":1,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":0,"talle":"L"},{"stock":0,"talle":"XL"}],
  1100,
 ["../assets/img/remeraGrisUnderwater.png", "remeraGrisUnderwater"],
 );
 
 const remera5 = new Prenda("Remeron mariposa - gris",
- 1,
+ "5",
  20211121,
  true,
- [[1,"S"], [0,"M"], [0,"L"],[1,"XL"]],
+ [{"stock":0,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":0,"talle":"L"},{"stock":1,"talle":"XL"}],
  1250,
 ["../assets/img/remeraGrisMariposa.png", "remeronGrisMariposa"],
 );
 
 const remera6 = new Prenda("Remera gris - cohete",
- 1,
+ "6",
  20210401,
  true,
- [[0,"S"], [0,"M"], [1,"L"],[1,"XL"]],
+ [{"stock":1,"talle":"S"}, {"stock":0,"talle":"M"}, {"stock":0,"talle":"L"},{"stock":1,"talle":"XL"}],
  1500,
 ["../assets/img/remeraGrisCohete.png", "remeraGrisCohete"],
 );
 
 const remera7 = new Prenda("Remera AS - marron",
- 1,
+ "7",
  20210107,
  true,
- [[1,"S"], [0,"M"], [0,"L"],[0,"XL"]],
+ [{"stock":1,"talle":"S"}, {"stock":0,"talle":"M"}, {"stock":0,"talle":"L"},{"stock":0,"talle":"XL"}],
  1600,
 ["../assets/img/remeraMarronAmericanSummer.png", "remeraMarronAmericanSummer"],
 );
 
 const remera8 = new Prenda("Remera ocre - Ojo",
- 1,
+ "8",
  20200424,
  true,
- [[1,"S"], [1,"M"], [1,"L"],[1,"XL"]],
+ [{"stock":1,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":0,"talle":"L"},{"stock":1,"talle":"XL"}],
  1350,
 ["../assets/img/remeraOcreOjo.png", "remeraOcreOjo"],
 );
 
 const remera9 = new Prenda("Remera negra - bolsillo rosas",
- 1,
+ "9",
  20210727,
  true,
- [[1,"S"], [1,"M"], [1,"L"],[0,"XL"]],
+ [{"stock":1,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":1,"talle":"L"},{"stock":1,"talle":"XL"}],
  1250,
 ["../assets/img/remeraNegraRosas.png", "remeraNegraRosasConBolsillo"],
 );
@@ -376,6 +376,8 @@ document.write(`<div class="row remeras__row">`)
                     //SELECTOR DE TALLES
                     const select = document.createElement('select');
                     select.classList.add("custom-select");
+                    select.classList.add("selectTalles");
+                    select.classList.add(`selectRemeras${remera.id}`);
                     
                     
                         const optionSelected = document.createElement('option');
@@ -385,37 +387,41 @@ document.write(`<div class="row remeras__row">`)
                         //HIJOS DEL SELECTOR DE TALLES SELECT
                         select.appendChild(optionSelected);
 
-                        if(remera.talle[0][0]>0){
+                        if(remera.talle[0].stock>0){
                         const optionS = document.createElement('option');
                         optionS.value = "S";
-                        optionS.textContent= remera.talle[0][1];
+                        optionS.classList.add="talleS";
+                        optionS.textContent= remera.talle[0].talle;
 
                         //HIJOS DEL SELECTOR DE TALLES SELECT
                         select.appendChild(optionS);
                         }
 
-                        if(remera.talle[1][0]>0){
+                        if(remera.talle[1].stock>0){
                         const optionM = document.createElement('option');
                         optionM.value = "M";
-                        optionM.textContent= remera.talle[1][1];
+                        optionM.classList.add="talleM";
+                        optionM.textContent= remera.talle[1].talle;
 
                         //HIJOS DEL SELECTOR DE TALLES SELECT
                         select.appendChild(optionM);
                         }
 
-                        if(remera.talle[2][0]>0){
+                        if(remera.talle[2].stock>0){
                         const optionL = document.createElement('option');
                         optionL.value = "L";
-                        optionL.textContent= remera.talle[2][1];
+                        optionL.classList.add="talleL";
+                        optionL.textContent= remera.talle[2].talle;
 
                         //HIJOS DEL SELECTOR DE TALLES SELECT
                         select.appendChild(optionL);
                         }
 
-                        if(remera.talle[3][0]>0){
+                        if(remera.talle[3].stock>0){
                         const optionXL = document.createElement('option');
                         optionXL.value = "XL";
-                        optionXL.textContent= remera.talle[3][1];
+                        optionXL.classList.add="talleXL";
+                        optionXL.textContent= remera.talle[3].talle;
 
                         //HIJOS DEL SELECTOR DE TALLES SELECT
                         select.appendChild(optionXL);
@@ -429,16 +435,28 @@ document.write(`<div class="row remeras__row">`)
                     
 
                         //BOTON AÑADIR
-                        const aniadir = document.createElement('a');
+                        const aniadir = document.createElement('button');
                         aniadir.classList.add("btn");
                         aniadir.classList.add("btn-primary");
+                        aniadir.classList.add("btn-aniadirCarrito");
                         aniadir.textContent="AÑADIR  ";
+                        aniadir.addEventListener("click", function(){
+                            clickAniadirCarrito(remera, select);
+                        });
                         
+                        
+    
+                          
+       
 
+    
+                       
+                        
                             //ICONO DEL BOTON AÑADIR
                             const iconoAniadir = document.createElement('i');
                             iconoAniadir.classList.add("fas");
                             iconoAniadir.classList.add("fa-cart-plus");
+                            iconoAniadir.classList.add("iconoAniadirCarrito");
 
 
                         //HIJO DEL BOTON AÑADIR
@@ -474,14 +492,170 @@ document.write(`<div class="row remeras__row">`)
     col.appendChild(div);
     //COLUMNA HIJO DE LA ROW DEL HTML
     remerasRow.appendChild(col);
+
+    
     })
     
-    //document.write("</div>");
-    //document.write("</section>");
+    
+}   
+//AÑADIR CARRITO
+
+
+//FUNCION PARA GUARDAR EL PRODUCTO EN EL CARRITO LOCALSTORAGE AL HACER CLICK EN AÑADIR
+   
+
+let iconoBtnAniadir = document.querySelector("fa-cart-plus");
+
+    
+
+
+function clickAniadirCarrito(remera,select){
+            
+    let remeraJson = JSON.stringify(remera);
+    console.log(remeraJson);
+    let remeraEnCarrito = JSON.parse(remeraJson);
+    console.log(remeraEnCarrito);
+    
+    let talleSeleccionado = select.value;
+    console.log(talleSeleccionado);
+    remeraEnCarrito.talle.length=0;
+
+    if(talleSeleccionado=="Talle"){
+
+        
+        return alert("Debe elegir un talle");
+        
+
+    }
+    
+    if(talleSeleccionado=="S"){
+
+        
+        remeraEnCarrito.talle.push({"stock":1,"talle":"S"});
+    }
+
+    if(talleSeleccionado=="M"){
+
+        remeraEnCarrito.talle.push({"stock":1,"talle":"M"});
+    }
+
+    if(talleSeleccionado.value=="L"){
+
+        
+        remeraEnCarrito.talle.push({"stock":1,"talle":"L"});
+    }
+
+    if(talleSeleccionado=="XL"){
+
+        
+        remeraEnCarrito.talle.push({"stock":1,"talle":"XL"});
+    }
+    
+    if(typeof(localStorage[`${remera.id}`]) == "undefined"){
+        console.log("se agrega")
+        localStorage.setItem(remera.id, JSON.stringify(remeraEnCarrito));
+
+    }else{
+        
+        let remeraEnCarrito1 = JSON.parse(localStorage[`${remera.id}`])
+
+        for(let y=0;y<remeraEnCarrito1.talle.length;y++){
+
+            if(remeraEnCarrito1.talle[y].talle==remeraEnCarrito.talle[0].talle){
+                remeraEnCarrito.talle[0].stock=remeraEnCarrito1.talle[y].stock+1;
+                remeraEnCarrito1.talle.splice(y,1);
+                remeraEnCarrito.talle=remeraEnCarrito.talle.concat(remeraEnCarrito1.talle);
+                break
+            }
+            if(y==(remeraEnCarrito1.talle.length-1)){
+
+                remeraEnCarrito.talle=remeraEnCarrito.talle.concat(remeraEnCarrito1.talle);
+                
+            }
+        }
+
+        localStorage.removeItem(`${remera.id}`);
+        localStorage.setItem(remera.id, JSON.stringify(remeraEnCarrito));
+
+    }
+   
+    mensajeAniadirCarrito();
+
 }
 
-
-
-
 seleccionarOrden();
+
+//MENSAJE CUANDO SE AGREGA UN PRODUCTO AL CARRITO
+
+
+
+function mensajeAniadirCarrito(){
+
+    let mensajeAniadidoCarrito = document.querySelector(".mensajeAniadidoCarrito");
+    let mensaje = document.createElement('span');
+    mensaje.textContent= "El producto fue añadido al carrito con éxito!";
+    mensajeAniadidoCarrito.appendChild(mensaje);
+    mensajeAniadidoCarrito.style.display="block";
+    mensajeAniadidoCarrito.style.backgroundColor="transparent";
+    mensajeAniadidoCarrito.style.color="black";
+    mensajeAniadidoCarrito.style.border="solid green";
+    mensajeAniadidoCarrito.style.fontSize="18px";
+    mensajeAniadidoCarrito.style.textAlign="center";
+    let btn =document.getElementsByClassName("btn-aniadirCarrito");
+    console.log(btn);
+    let iconoAniadir = JSON.stringify(document.querySelector(".iconoAniadirCarrito"));
+    console.log(iconoAniadir);
+    for (btns of btn){
+
+        btns.disabled=true;
+        btns.textContent="Añadiendo..."
+    }
+    
+    
+    
+
+    //TIEMPO QUE DURA EL MENSAJE
+
+    function esconderMsjAniadirCarrito(){
+        
+        mensajeAniadidoCarrito.style.display="none";
+
+
+        for (btns of btn){
+
+            btns.disabled=false;
+            btns.textContent=`AÑADIR `;
+            const iconoAniadir = document.createElement('i');
+            iconoAniadir.classList.add("fas");
+            iconoAniadir.classList.add("fa-cart-plus");
+            iconoAniadir.classList.add("iconoAniadirCarrito");
+            btns.appendChild(iconoAniadir);
+
+            
+        }
+
+       
+
+        
+        mensajeAniadidoCarrito.innerHTML="";
+        
+
+    }
+
+
+    setTimeout(esconderMsjAniadirCarrito,2000);
+
+    }
+
+
+/*
+for(btnAniadir of btnAniadirCarrito){
+
+
+    btnAniadir.addEventListener("click", mensajeAniadirCarrito);
+   
+}
+
+*/
+
 
