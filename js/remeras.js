@@ -671,9 +671,10 @@ function mensajeAniadirCarrito(){
         modalCarritoHTML.appendChild(k);
 
         for(let i = 0 ; i< localStorage.length; i++){
-
+            
             let clave=localStorage.key(i);
             let item = JSON.parse(localStorage[`${clave}`])
+            let price = 0;
             function modalCarrito(){
 
                
@@ -702,7 +703,7 @@ function mensajeAniadirCarrito(){
 
                             function eliminarElementoCarrito(){
 
-                                total=total-item.precio;
+                                total=total-price;
                                 console.log(total);
                                 divContenedor.innerHTML="";
                                 localStorage.removeItem(clave);
@@ -712,9 +713,6 @@ function mensajeAniadirCarrito(){
             
                             let titulo = document.createElement("p");
                             titulo.textContent = item.nombre;
-        
-                            let precio = document.createElement("p");
-                            precio.textContent = `$ ${item.precio}`;
 
                             let cantidad= document.createElement("div");
 
@@ -723,8 +721,16 @@ function mensajeAniadirCarrito(){
                                 let cantidad1= document.createElement("p");
                                 cantidad1.textContent+=`cantidad: ${talle.stock} de talle: ${talle.talle}`;
                                 cantidad.appendChild(cantidad1);
-                                
+                                price += item.precio * talle.stock;
                             }
+        
+                            let precio = document.createElement("p");
+                            precio.textContent = `$ ${item.precio} c/u, total: $${price}`;
+                            
+
+                            
+
+                            
 
 
         
@@ -745,7 +751,8 @@ function mensajeAniadirCarrito(){
             }
 
             modalCarrito();
-            total+=item.precio;
+           
+            total+=price;
 
         }
 
