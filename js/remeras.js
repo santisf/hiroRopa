@@ -153,8 +153,49 @@ arrayRemerasOrdenFecha.forEach((remeraFecha) => {
         }
 
     })
+    
+    if(arr.length>1){
+        
+        if(remerasOrdenFecha1.length>0){
+            
+           
+           
+            if(arr[0].fecha != remerasOrdenFecha1[0].fecha){
+                
 
-    remerasOrdenFecha1.unshift(arr[0]);
+                for(let s=0; s < arr.length; s += 1){
+
+                    remerasOrdenFecha1.unshift(arr[s]);
+                    console.log("--------------------"+remerasOrdenFecha1)
+                    
+        
+                }
+
+            }
+            
+        }else{
+
+            for(let s=0; s < arr.length; s += 1){
+
+                remerasOrdenFecha1.unshift(arr[s]);
+                console.log("--------------------"+remerasOrdenFecha1);
+               
+    
+            }
+
+        }
+                
+   
+            
+    }else{
+
+        remerasOrdenFecha1.unshift(arr[0]);
+        console.log("--------------------"+remerasOrdenFecha1)
+        
+
+    }
+
+  
     
 
 });
@@ -725,7 +766,7 @@ function mensajeAniadirCarrito(){
                             }
         
                             let precio = document.createElement("p");
-                            precio.textContent = `$ ${item.precio} c/u, total: $${price}`;
+                            precio.textContent = `$${item.precio} c/u, total: $${price}`;
                             
 
                             
