@@ -342,6 +342,8 @@ let ordenSeccion = document.querySelector(".ordenSeccion");
 
 
 
+
+
 //funcion para seleccionar orden puesto en onchange de select .ordenSeccion
 
 
@@ -350,25 +352,78 @@ function seleccionarOrden(){
     
     
     accesoriosRow.innerHTML="";
-    
+    let accesoriosOrdenFechaPage=accesoriosOrdenFecha.slice();
+    let accesoriosOrdenPrecioPage=accesoriosOrdenPrecio.slice();
+    let accesoriosOrdenPrecioDescPage=accesoriosOrdenPrecioDesc.slice();
     if(ordenSeccion.value == "date")
     {
-        mostrarPrendas(accesoriosOrdenFecha);
+        
+        mostrarPrendas(accesoriosOrdenFechaPage.slice(0,9));
+        getPaginacion(accesoriosOrdenFechaPage);
         
     }
 
     if(ordenSeccion.value == "price")
     {
 
-        mostrarPrendas(accesoriosOrdenPrecio);
+        mostrarPrendas(accesoriosOrdenPrecioPage.slice(0,9));
+        getPaginacion(accesoriosOrdenPrecioPage);
         
     }
 
     if(ordenSeccion.value == "price-desc")
     {
 
-        mostrarPrendas(accesoriosOrdenPrecioDesc);
+        mostrarPrendas(accesoriosOrdenPrecioDescPage.slice(0,9));
+        getPaginacion(accesoriosOrdenPrecioDescPage);
     }
+
+        function getPaginacion(orden){
+            let pag= document.querySelector(".paginacionAccesorios--ul");
+            let pages = Math.ceil(orden.length/9);
+            let orden1 = orden.slice();
+            pag.innerHTML ="";
+            let linkPrev=document.createElement("a");
+            for(let i=1;i<=pages;i++){
+    
+                /*<li class="page-item"><a class="page-link paginacionAccesorios__nav__ul__li__paginaActiva" href="accesorios.html">
+                1</a></li>*/
+                let a = i * 9;
+                let li = document.createElement("li");
+                let link = document.createElement("a");
+                link.classList.add("page-link")
+                li.classList.add("page-item");
+                link.href="#tituloAccesorios";
+                
+               
+                link.textContent= i;
+                console.log(orden1.slice(0,9));
+                link.addEventListener("click", () => { 
+
+                    linkPrev.classList.remove("paginacionAccesorios__nav__ul__li__paginaActiva");
+                   
+                    linkPrev=link;
+                    
+                    link.classList.add("paginacionAccesorios__nav__ul__li__paginaActiva");
+                    
+                    accesoriosRow.innerHTML="";
+
+                    mostrarPrendas(orden1.slice(a-9,a));
+
+                    console.log(orden1.slice(0,orden1.length));
+
+                } )
+                
+                console.log(orden1);
+                pag.appendChild(li);
+                li.appendChild(link);
+                
+            }
+            
+        
+        }
+
+    
     
 }
 
@@ -723,10 +778,14 @@ function clickAniadirCarrito(accesorio,select){
     console.log(accesorioJson);
     let accesorioEnCarrito = JSON.parse(accesorioJson);
     console.log(accesorioEnCarrito);
-    
-    let talleSeleccionado = select.value;
-    console.log(talleSeleccionado);
+
+   
     accesorioEnCarrito.talle.length=0;
+
+    if(typeof(select) != "undefined"){
+
+        let talleSeleccionado = select.value;
+        console.log(talleSeleccionado);
 
     if(talleSeleccionado=="Talle"){
 
@@ -754,6 +813,27 @@ function clickAniadirCarrito(accesorio,select){
     }
 
     
+    if(talleSeleccionado=="10"){
+
+        accesorioEnCarrito.talle.push({"stock":1,"talle":"10"});
+
+    }
+
+    if(talleSeleccionado=="12"){
+
+        accesorioEnCarrito.talle.push({"stock":1,"talle":"12"});
+
+    }
+
+}else{
+
+   
+    accesorioEnCarrito.talle.length=0;
+    accesorioEnCarrito.talle.stock=0;
+    accesorioEnCarrito.talle.push({"stock":1,"talle":"all"});
+
+    
+}
     
     if(typeof(localStorage[`${accesorio.id}`]) == "undefined"){
         console.log("se agrega")
@@ -851,3 +931,179 @@ function mensajeAniadirCarrito(){
     setTimeout(esconderMsjAniadirCarrito,2000);
 
     }
+
+    let modalCarritoHTML = document.querySelector(".modalCarrito__div__modalContent");
+    let iconoCarritoHeader = document.querySelector(".header__row__div__nav__div__ul__li__nav-link--icon");
+    iconoCarritoHeader.addEventListener("click", generarModalCarrito)
+
+
+
+    function generarModalCarrito(){
+        modalCarritoHTML.innerHTML="";
+        let h3=document.createElement("h3");
+        h3.style.textAlign = "center";
+        h3.textContent="TUS PRODUCTOS";
+
+        let k= document.createElement("div");
+
+            let hr0= document.createElement("hr");
+
+        k.appendChild(hr0);
+        
+        let total=0;
+        modalCarritoHTML.appendChild(h3);
+        modalCarritoHTML.appendChild(k);
+
+        for(let i = 0 ; i< localStorage.length; i++){
+            
+            let clave=localStorage.key(i);
+            let item = JSON.parse(localStorage[`${clave}`])
+            let price = 0;
+            function modalCarrito(){
+
+               
+                let divContenedor = document.createElement("div");
+                
+        
+                    let div1 = document.createElement("div");
+                    div1.classList.add("modalCarrito__div__modalContent__div__bodyModalCarrito");
+        
+                        let img = document.createElement("img");
+                        img.src = item.img[0];
+                        img.alt = item.img[1];
+                        img.classList.add("img-fluid");
+                        img.classList.add("modalCarrito__div__modalContent__div__bodyModalCarrito__imgModalCarrito");
+        
+                        let div2= document.createElement("div");
+
+                            let buttonX = document.createElement("button");
+                            buttonX.classList.add("btn-primary");
+                            buttonX.classList.add("buttonXmodalCarrito");
+                            buttonX.type="button";
+                            buttonX.textContent="X";
+                            buttonX.style.justifyContent="right";
+                            buttonX.addEventListener("click",eliminarElementoCarrito);
+                            buttonX.addEventListener("click",refreshFooterModal);
+
+                            function eliminarElementoCarrito(){
+
+                                total=total-price;
+                                console.log(total);
+                                divContenedor.innerHTML="";
+                                localStorage.removeItem(clave);
+                                
+                                
+                            }
+            
+                            let titulo = document.createElement("p");
+                            titulo.textContent = item.nombre;
+
+                            let cantidad= document.createElement("div");
+
+                            for(let talle of item.talle){
+
+                                let cantidad1= document.createElement("p");
+                                cantidad1.textContent+=`cantidad: ${talle.stock} de talle: ${talle.talle}`;
+                                cantidad.appendChild(cantidad1);
+                                price += item.precio * talle.stock;
+                            }
+        
+                            let precio = document.createElement("p");
+                            precio.textContent = `$${item.precio} c/u, total: $${price}`;
+                            
+
+                            
+
+                            
+
+
+        
+                        div2.appendChild(titulo);
+                        div2.appendChild(precio);
+                        div2.appendChild(cantidad);
+                        div2.appendChild(buttonX);
+                        
+        
+                    div1.appendChild(img);
+                    div1.appendChild(div2);
+
+                    let hr = document.createElement("hr");
+        
+                divContenedor.appendChild(div1);
+                divContenedor.appendChild(hr);
+                modalCarritoHTML.appendChild(divContenedor);
+            }
+
+            modalCarrito();
+           
+            total+=price;
+
+        }
+
+       
+        let footer = document.createElement("div");
+        footer.classList.add("modalCarrito__div__modalContent__modalCarritoFooter");
+
+            let pFooter = document.createElement("p");
+
+                let strong = document.createElement("strong");
+                strong.textContent=`SUBTOTAL: ${total}`;
+
+            pFooter.appendChild(strong);
+
+            let hr5= document.createElement("hr");
+
+            let button1 = document.createElement("button");
+            button1.classList.add("btn");
+            button1.classList.add("btn-outline-success");
+            button1.classList.add("my-2");
+            button1.classList.add("my-sm-0");
+            button1.type="button";
+
+                let a1= document.createElement("a");
+                a1.href="carrito.html";
+                a1.textContent="VER CARRITO";
+
+            button1.appendChild(a1);
+
+        
+        footer.appendChild(pFooter);
+        footer.appendChild(hr5);
+        footer.appendChild(button1);
+        modalCarritoHTML.appendChild(footer);
+
+
+        function refreshFooterModal(){
+
+            footer.innerHTML="";
+            footer.classList.add("modalCarrito__div__modalContent__modalCarritoFooter");
+
+                let pFooter = document.createElement("p");
+
+                    let strong = document.createElement("strong");
+                    strong.textContent=`SUBTOTAL: ${total}`;
+
+                pFooter.appendChild(strong);
+
+                let hr5= document.createElement("hr");
+
+                let button1 = document.createElement("button");
+                button1.classList.add("btn");
+                button1.classList.add("btn-outline-success");
+                button1.classList.add("my-2");
+                button1.classList.add("my-sm-0");
+                button1.type="button";
+
+                    let a1= document.createElement("a");
+                    a1.href="carrito.html";
+                    a1.textContent="VER CARRITO";
+
+                button1.appendChild(a1);
+
+            
+            footer.appendChild(pFooter);
+            footer.appendChild(hr5);
+            footer.appendChild(button1);
+            modalCarritoHTML.appendChild(footer);
+            
+        }}
