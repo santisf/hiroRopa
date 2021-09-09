@@ -1,9 +1,3 @@
-$(document).ready(function(){
-    // indicamos que se ejecuta la función a los 5 segundos de haberse
-    // cargado la pagina
-   console.log("hola");
-   
-});
 
 
 
@@ -29,7 +23,20 @@ const validarFormContacto = function(event) {
     const formContactoMsj = $("#formContactoMsj");
     const mensajeValidarFormContacto = $("#mensajeValidarFormContacto");
     
-
+    if(formContactoNombre.val()!="" && formContactoMail.val()!="" && formContactoTel.val()!="(+54 9) " && formContactoMsj.val()!="" && formContactoMailValido(formContactoMail.val()) ){
+        // color si todos los datos fueron ingresados correctamente
+            const form1 = new FormData(this);
+            const enviarMail= document.querySelector(".btnEnviarMail");
+            miMail.attr("href", `mailto:santiago.foti1@gmail.com?subject=nombre: ${form1.get('name')} email: ${form1.get('email')} cel: ${form1.get('tel')}&body=${form1.get('msj')}`)
+            miMail.text("mail");
+            enviarMail.click();
+            mensajeValidarFormContacto.html("Gracias por contactarnos!");
+            mensajeValidarFormContacto.css("display","block")
+            mensajeValidarFormContacto.css("backgroundColor", "trasnparent");
+            mensajeValidarFormContacto.css("color", "white");
+            mensajeValidarFormContacto.css("border", "solid green");
+            
+        }  
   
 
 //validar que el nombre de usuario no este vacio
@@ -73,19 +80,6 @@ if(!formContactoMailValido(formContactoMail.val())){
 }
 
 
-// color si todos los datos fueron ingresados correctamente
-    
-    mensajeValidarFormContacto.html("Gracias por contactarnos!");
-    mensajeValidarFormContacto.css("display","block")
-    mensajeValidarFormContacto.css("backgroundColor", "trasnparent");
-    mensajeValidarFormContacto.css("color", "white");
-    mensajeValidarFormContacto.css("border", "solid green");
-
-    const form1 = new FormData(this);
-    const enviarMail= document.querySelector(".btnEnviarMail");
-    miMail.attr("href", `mailto:santiago.foti1@gmail.com?subject=nombre: ${form1.get('name')} email: ${form1.get('email')} cel: ${form1.get('tel')}&body=${form1.get('msj')}`)
-    miMail.text("mail");
-    enviarMail.click();
     
 
 //FUNCION ----Si el formulario fue completado con exito el mensaje desaparece en x tiempo
@@ -100,6 +94,10 @@ const formContactoMailValido = (mail) => { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.t
     
 
 form1.on('submit',validarFormContacto);
+btnFormContactoSubmit.on('click', ()=>{
+    form1.submit(validarFormContacto);
+})
+
 
 
 

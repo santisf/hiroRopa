@@ -530,11 +530,15 @@ header .row div {
         border-radius: 8px 8px 0px 0px; } }
     .contacto .row.contacto__row--margin div .contacto__row__div__form {
       padding: 20px;
-      border-radius: 0 8px 8px 0; }
-      .contacto .row.contacto__row--margin div .contacto__row__div__form div input:focus {
-        font-size: 24px; }
-      .contacto .row.contacto__row--margin div .contacto__row__div__form div textarea:focus {
-        font-size: 24px; }
+      border-radius: 0 8px 8px 0;
+      /*div{
+                    input:focus{
+                        font-size:24px;
+                    }
+                    textarea:focus{
+                        font-size:24px;
+                    }
+                }*/ }
     @media only screen and (max-width: 991px) {
       .contacto .row.contacto__row--margin div .contacto__row__div__form {
         border-radius: 0px 0px 8px 8px; } }
