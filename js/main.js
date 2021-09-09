@@ -16,11 +16,11 @@ let miMail= $("<a></a>");
 miMail.addClass("btnEnviarMail");
 form1.append(miMail);
 miMail.attr("href", `mailto:santiago.foti1@gmail.com?subject=nombre: ${form1.get('name')} mail: ${form1.get('email')} cel: ${form1.get('tel')}&body=${form1.get('msj')}`)
-    miMail.css("opacity", "0");
-    miMail.css("display", "none");
-    miMail.text("mail");
-    miMail.click();
-    $(".btnEnviarMail").click();
+miMail.css("opacity", "0");
+miMail.css("display", "none");
+    
+  
+  
 const validarFormContacto = function(event) {
     event.preventDefault();
     const formContactoNombre = $('#formContactoNombre');
@@ -48,7 +48,7 @@ if(formContactoMail.val()===""){
     return false;
 }
 
-if(formContactoTel.val()==="(+54) "){
+if(formContactoTel.val()==="(+54 9) "){
     mensajeValidarFormContacto.html("Debe completar el campo con su telefono");
     mensajeValidarFormContacto.css("display", "block");
     formContactoTel.focus();
@@ -67,7 +67,7 @@ if(formContactoMsj.val()===""){
 
 if(!formContactoMailValido(formContactoMail.val())){
     mensajeValidarFormContacto.html("Debe escribir un email válido");
-    mensajeValidarFormContacto.style.display="block";
+    mensajeValidarFormContacto.css("display","block");
     formContactoMail.focus();
     return false;
 }
@@ -83,7 +83,7 @@ if(!formContactoMailValido(formContactoMail.val())){
 
     const form1 = new FormData(this);
     const enviarMail= document.querySelector(".btnEnviarMail");
-    miMail.attr("href", `mailto:santiago.foti1@gmail.com?subject=nombre${form1.get('name')} mail${form1.get('email')} rel${form1.get('tel')}&body=${form1.get('msj')}`)
+    miMail.attr("href", `mailto:santiago.foti1@gmail.com?subject=nombre: ${form1.get('name')} email: ${form1.get('email')} cel: ${form1.get('tel')}&body=${form1.get('msj')}`)
     miMail.text("mail");
     enviarMail.click();
     
