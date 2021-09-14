@@ -100,11 +100,12 @@ btnFormContactoSubmit.on('click', ()=>{
 
 //ANIMACION CON JQUERY
 const divIconoG = $(".divIconoGrandeContacto");
-const backHome = "<a class='volverContacto' style='display: none;'><h1 class= 'volverContactoH1'style='text-align: center; padding-bottom: 50px;'>HAZ CLICK PARA VOLVER AL INICIO</h1></a>";
+const backHome = "<a class='volverContacto' style='display: none;'><h1 class= 'volverContactoH1'style='text-align: center; padding-bottom: 100px; padding-top: 60px;'>HAZ CLICK PARA VOLVER AL INICIO</h1></a>";
 const iconoG=$(".contacto__row__div__a__logoContacto");
+const footerContacto =$(".footerContacto");
+iconoG.click(() => {iconoG.fadeOut(800, ()=>{
 
-iconoG.click(() => {iconoG.fadeOut(1000, ()=>{
-
+    
     divIconoG.append(backHome);
     let asd=$(".volverContacto");
     let asd1=document.querySelector(".volverContacto");
@@ -126,3 +127,4 @@ iconoG.click(() => {iconoG.fadeOut(1000, ()=>{
 
 
 })});
+
