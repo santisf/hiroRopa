@@ -937,7 +937,7 @@ function mensajeAniadirCarrito(){
     iconoCarritoHeader.addEventListener("click", generarModalCarrito)
 
 
-
+//MODAL DEL CARRITO
     function generarModalCarrito(){
         modalCarritoHTML.innerHTML="";
         let h3=document.createElement("h3");
@@ -1060,17 +1060,61 @@ function mensajeAniadirCarrito(){
             button1.classList.add("my-sm-0");
             button1.type="button";
 
+            
+
                 let a1= document.createElement("a");
                 a1.href="carrito.html";
                 a1.textContent="VER CARRITO";
 
-            button1.appendChild(a1);
+                button1.appendChild(a1);
+
 
         
         footer.appendChild(pFooter);
         footer.appendChild(hr5);
         footer.appendChild(button1);
+        
         modalCarritoHTML.appendChild(footer);
+      /*  
+        function jqueryClose(){
+                let buttonC = "<button type='button' class='btn btn-outline-success btnCloseModal my-2 my-sm-0'>CERRAR</button>";
+                $(".modalCarrito__div__modalContent__modalCarritoFooter").append(buttonC);
+                $(".btnCloseModal").click(() => { 
+                    
+                    $(".modalCarrito").modal().slideUp(1100);
+                    
+                    
+
+            });
+            */
+
+/*
+            function cla(){
+                setTimeout(() => {
+                        
+                    $(".btnCloseModal").attr("data-dismiss", "modal");
+                    $(".btnCloseModal").click();
+                
+                }, 1080);
+            }
+
+
+            for(let i =0; i<2 ; i++){
+
+                if(i=0){
+                    $(".btnCloseModal").attr("data-dismiss", "modal");
+
+                }
+
+            }
+            
+            
+                $(".btnCloseModal").css("margin-left", "20px");
+                
+        }
+
+        
+*/
 
 
         function refreshFooterModal(){
@@ -1105,5 +1149,14 @@ function mensajeAniadirCarrito(){
             footer.appendChild(hr5);
             footer.appendChild(button1);
             modalCarritoHTML.appendChild(footer);
+          
             
-        }}
+            
+        }
+        /*
+        jqueryClose();
+        */
+    }
+
+        
+        
