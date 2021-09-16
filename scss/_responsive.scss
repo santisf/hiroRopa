@@ -285,6 +285,14 @@ header{
     }
 }
 /* SECCION DE CONTACTO - contacto.html*/
+.none{
+    display: none;
+    
+}
+.contact-form-loader{
+    text-align: center;
+    max-width: 80px;
+}
 .contacto{
     border-radius:$bordeRedondoBot;
     padding:$resetPadding;
@@ -321,6 +329,21 @@ header{
                         font-size:24px;
                     }
                 }*/
+               
+                
+                
+
+                @keyframes show-message{
+                    0% {
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+
+                    0% {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
             }
             
             @media only screen and (max-width:991px) {

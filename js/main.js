@@ -15,56 +15,67 @@ miMail.css("display", "none");
     
   
   
-const validarFormContacto = function(event) {
-    event.preventDefault();
+const validarFormContacto = function() {
+    
     const formContactoNombre = $('#formContactoNombre');
     const formContactoMail = $("#formContactoMail");
     const formContactoTel = $("#formContactoTel");
     const formContactoMsj = $("#formContactoMsj");
     const mensajeValidarFormContacto = $("#mensajeValidarFormContacto");
     
-    if(formContactoNombre.val()!="" && formContactoMail.val()!="" && formContactoTel.val()!="(+54 9) " && formContactoMsj.val()!="" && formContactoMailValido(formContactoMail.val()) ){
+    if(formContactoNombreValido(formContactoNombre.val()) && formContactoMailValido(formContactoMail.val()) && formContactoTel.val()!="(+54 9) " && formContactoMensajeValido(formContactoMsj.val())){
         // color si todos los datos fueron ingresados correctamente
-            const form1 = new FormData(this);
+            /*const form1 = new FormData(this);
             const enviarMail= document.querySelector(".btnEnviarMail");
             miMail.attr("href", `mailto:santiago.foti1@gmail.com?subject=nombre: ${form1.get('name')} email: ${form1.get('email')} cel: ${form1.get('tel')}&body=${form1.get('msj')}`)
             miMail.text("mail");
-            enviarMail.click();
-            mensajeValidarFormContacto.html("Gracias por contactarnos!");
-            mensajeValidarFormContacto.css("display","block")
-            mensajeValidarFormContacto.css("backgroundColor", "trasnparent");
-            mensajeValidarFormContacto.css("color", "white");
-            mensajeValidarFormContacto.css("border", "solid green");
+            enviarMail.click();*/
+           
+           const loader=document.querySelector(".contact-form-loader"); 
+           console.log(loader);
+           const response=document.querySelector(".contact-form-response");
+           loader.classList.remove("none");
+           loader.style.position="absolute";
+           loader.style.top="48%";
+           loader.style.right="48%";
             
+          
+           setTimeout(()=>{
+                loader.classList.add("none");
+                
+                mensajeValidarFormContacto.html("Gracias por contactarnos!");
+                mensajeValidarFormContacto.css("display","block")
+                mensajeValidarFormContacto.css("backgroundColor", "trasnparent");
+                mensajeValidarFormContacto.css("color", "white");
+                mensajeValidarFormContacto.css("border", "solid green");
+           }, 3000)
         }  
   
 
 //validar que el nombre de usuario no este vacio
 
-if(formContactoNombre.val()===""){
+if(!formContactoNombreValido(formContactoNombre.val())){
     mensajeValidarFormContacto.html("Debe completar el campo con su nombre completo");
-    mensajeValidarFormContacto.css("display", "block");
+    mensajeValidarFormContacto.slideDown('fast');
+    setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 2000);
     formContactoNombre.focus();
     return false;
 }
 
-if(formContactoMail.val()===""){
-    mensajeValidarFormContacto.html("Debe completar el campo con su usuario@mail.com");
-    mensajeValidarFormContacto.css("display", "block");
-    formContactoMail.focus();
-    return false;
-}
+
 
 if(formContactoTel.val()==="(+54 9) "){
     mensajeValidarFormContacto.html("Debe completar el campo con su telefono");
-    mensajeValidarFormContacto.css("display", "block");
+    mensajeValidarFormContacto.slideDown('fast');
+    setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 2000);
     formContactoTel.focus();
     return false;
 }
 
-if(formContactoMsj.val()===""){
-    mensajeValidarFormContacto.html("Debe completar el campo con su mensaje");
-    mensajeValidarFormContacto.css("display", "block");
+if(!formContactoMensajeValido(formContactoMsj.val())){
+    mensajeValidarFormContacto.html("El mensaje no puede estar vacío, ni pasar los 255 caracteres");
+    mensajeValidarFormContacto.slideDown('fast');
+    setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 2000);
     formContactoMsj.focus();
     return false;
 }
@@ -74,7 +85,8 @@ if(formContactoMsj.val()===""){
 
 if(!formContactoMailValido(formContactoMail.val())){
     mensajeValidarFormContacto.html("Debe escribir un email válido");
-    mensajeValidarFormContacto.css("display","block");
+    mensajeValidarFormContacto.slideDown('fast');
+    setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 3000);
     formContactoMail.focus();
     return false;
 }
@@ -84,18 +96,20 @@ if(!formContactoMailValido(formContactoMail.val())){
 
 //FUNCION ----Si el formulario fue completado con exito el mensaje desaparece en x tiempo
 function esconderMsjDeExito(){
-    mensajeValidarFormContacto.css("display", "none");
+    mensajeValidarFormContacto.fadeOut('slow');
 
 }
-setTimeout(esconderMsjDeExito,3000);
+setTimeout(esconderMsjDeExito,6000);
 };
-
+const formContactoMensajeValido= (mensaje) => { return /^.{1,255}$/.test(mensaje)};
+const formContactoNombreValido= (nombre) => { return /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(nombre)};
 const formContactoMailValido = (mail) => { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail); }
     
 
 form1.on('submit',validarFormContacto);
 btnFormContactoSubmit.on('click', ()=>{
     form1.submit(validarFormContacto);
+
 })
 
 //ANIMACION CON JQUERY
@@ -127,4 +141,7 @@ iconoG.click(() => {iconoG.fadeOut(800, ()=>{
 
 
 })});
+
+
+
 
