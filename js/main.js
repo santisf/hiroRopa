@@ -22,7 +22,7 @@ const validarFormContacto = function(e) {
     const formContactoTel = $("#formContactoTel");
     const formContactoMsj = $("#formContactoMsj");
     const mensajeValidarFormContacto = $("#mensajeValidarFormContacto");
-    
+    const loader=document.querySelector(".contact-form-loader"); 
     if(formContactoNombreValido(formContactoNombre.val()) && formContactoMailValido(formContactoMail.val()) && formContactoTel.val()!="(+54 9) " && formContactoMensajeValido(formContactoMsj.val())){
         // color si todos los datos fueron ingresados correctamente
             /*const form1 = new FormData(this);
@@ -31,24 +31,16 @@ const validarFormContacto = function(e) {
             miMail.text("mail");
             enviarMail.click();*/
             enviarFormularioContacto();
-           const loader=document.querySelector(".contact-form-loader"); 
+           
            console.log(loader);
-           const response=document.querySelector(".contact-form-response");
+           
            loader.classList.remove("none");
            loader.style.position="absolute";
            loader.style.top="48%";
            loader.style.right="48%";
            
           
-           setTimeout(()=>{
-                loader.classList.add("none");
-                
-                mensajeValidarFormContacto.html("Gracias por contactarnos!");
-                mensajeValidarFormContacto.css("display","block")
-                mensajeValidarFormContacto.css("backgroundColor", "trasnparent");
-                mensajeValidarFormContacto.css("color", "white");
-                mensajeValidarFormContacto.css("border", "solid green");
-           }, 3000)
+           
         }  
   
 
@@ -72,7 +64,26 @@ const validarFormContacto = function(e) {
                 })
             })
                 .then(response => response.json())
-                .then(data => console.log(data))
+                .then(data => {
+                    console.log(data.success)
+                    if(!data.success){
+
+                       
+                        loader.classList.add("none");
+                        
+                        mensajeValidarFormContacto.html("Gracias por contactarnos!");
+                        
+                        mensajeValidarFormContacto.css("backgroundColor", "trasnparent");
+                        mensajeValidarFormContacto.css("color", "white");
+                        mensajeValidarFormContacto.css("border", "solid green");
+                        return
+                    }
+
+                    loader.classList.add("none");   
+                    mensajeValidarFormContacto.html("Hubo un error en el servidor, intente mas tarde");
+                    mensajeValidarFormContacto.css("display","block");
+
+                })
                 .catch(error => console.log(error));
                 
         return false;
