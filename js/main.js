@@ -46,10 +46,10 @@ const validarFormContacto = function(e) {
 
     //validar que el nombre de usuario no este vacio
 
-    /* evitar refresco formulario ajax*/
+    /* evitar refresco formulario ajax ---- COMUNICACION CON EL SERVIDOR DE LA API QUE NOS MANDA EL FORMULARIO AL*/
     function enviarFormularioContacto(){
         e.preventDefault();
-        console.log(formContactoNombre.attr("value"));
+        
         fetch("https://formsubmit.co/ajax/santiago.foti1@gmail.com", {
                 method: "POST",
                 headers: { 
@@ -65,23 +65,23 @@ const validarFormContacto = function(e) {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data.success)
-                    if(!data.success){
+                    
+                    if(data.success==="true"){
 
                        
                         loader.classList.add("none");
                         
                         mensajeValidarFormContacto.html("Gracias por contactarnos!");
-                        
+                        mensajeValidarFormContacto.css("display", "block");
                         mensajeValidarFormContacto.css("backgroundColor", "trasnparent");
                         mensajeValidarFormContacto.css("color", "white");
                         mensajeValidarFormContacto.css("border", "solid green");
                         return
-                    }
+                    }    
 
-                    loader.classList.add("none");   
-                    mensajeValidarFormContacto.html("Hubo un error en el servidor, intente mas tarde");
-                    mensajeValidarFormContacto.css("display","block");
+                    mensajeValidarFormContacto.html("Hubo un error en el servidor. Intentelo más tarde");
+                    mensajeValidarFormContacto.css("display", "block");
+                    loader.classList.add("none");
 
                 })
                 .catch(error => console.log(error));
