@@ -15,7 +15,7 @@ miMail.css("display", "none");
     
   
   
-const validarFormContacto = function() {
+const validarFormContacto = function(e) {
     
     const formContactoNombre = $('#formContactoNombre');
     const formContactoMail = $("#formContactoMail");
@@ -30,7 +30,7 @@ const validarFormContacto = function() {
             miMail.attr("href", `mailto:santiago.foti1@gmail.com?subject=nombre: ${form1.get('name')} email: ${form1.get('email')} cel: ${form1.get('tel')}&body=${form1.get('msj')}`)
             miMail.text("mail");
             enviarMail.click();*/
-           
+            enviarFormularioContacto();
            const loader=document.querySelector(".contact-form-loader"); 
            console.log(loader);
            const response=document.querySelector(".contact-form-response");
@@ -38,7 +38,7 @@ const validarFormContacto = function() {
            loader.style.position="absolute";
            loader.style.top="48%";
            loader.style.right="48%";
-            
+           
           
            setTimeout(()=>{
                 loader.classList.add("none");
@@ -52,61 +52,92 @@ const validarFormContacto = function() {
         }  
   
 
-//validar que el nombre de usuario no este vacio
+    //validar que el nombre de usuario no este vacio
 
-if(!formContactoNombreValido(formContactoNombre.val())){
-    mensajeValidarFormContacto.html("Debe completar el campo con su nombre completo");
-    mensajeValidarFormContacto.slideDown('fast');
-    setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 2000);
-    formContactoNombre.focus();
-    return false;
-}
+    /* evitar refresco formulario ajax*/
+    function enviarFormularioContacto(){
+        e.preventDefault();
+        console.log(formContactoNombre.attr("value"));
+        fetch("https://formsubmit.co/ajax/santiago.foti1@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formContactoNombre.val(),
+                    email: formContactoMail.val(),
+                    tel: formContactoTel.val(),
+                    message: formContactoMsj.val()
+                })
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.log(error));
+                
+        return false;
 
-
-
-if(formContactoTel.val()==="(+54 9) "){
-    mensajeValidarFormContacto.html("Debe completar el campo con su telefono");
-    mensajeValidarFormContacto.slideDown('fast');
-    setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 2000);
-    formContactoTel.focus();
-    return false;
-}
-
-if(!formContactoMensajeValido(formContactoMsj.val())){
-    mensajeValidarFormContacto.html("El mensaje no puede estar vacío, ni pasar los 255 caracteres");
-    mensajeValidarFormContacto.slideDown('fast');
-    setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 2000);
-    formContactoMsj.focus();
-    return false;
-}
-
-// validar que el mail se un mail valido
+    }
 
 
-if(!formContactoMailValido(formContactoMail.val())){
-    mensajeValidarFormContacto.html("Debe escribir un email válido");
-    mensajeValidarFormContacto.slideDown('fast');
-    setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 3000);
-    formContactoMail.focus();
-    return false;
-}
+    if(!formContactoNombreValido(formContactoNombre.val())){
+        mensajeValidarFormContacto.html("Debe completar el campo con su nombre completo");
+        mensajeValidarFormContacto.slideDown('fast');
+        setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 2000);
+        formContactoNombre.focus();
+        return false;
+    }
+
+
+
+    if(formContactoTel.val()==="(+54 9) "){
+        mensajeValidarFormContacto.html("Debe completar el campo con su telefono");
+        mensajeValidarFormContacto.slideDown('fast');
+        setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 2000);
+        formContactoTel.focus();
+        return false;
+    }
+
+    if(!formContactoMensajeValido(formContactoMsj.val())){
+        mensajeValidarFormContacto.html("El mensaje no puede estar vacío, ni pasar los 255 caracteres");
+        mensajeValidarFormContacto.slideDown('fast');
+        setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 2000);
+        formContactoMsj.focus();
+        return false;
+    }
+
+    // validar que el mail se un mail valido
+
+
+    if(!formContactoMailValido(formContactoMail.val())){
+        mensajeValidarFormContacto.html("Debe escribir un email válido");
+        mensajeValidarFormContacto.slideDown('fast');
+        setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 3000);
+        formContactoMail.focus();
+        return false;
+    }
 
 
     
 
 //FUNCION ----Si el formulario fue completado con exito el mensaje desaparece en x tiempo
-function esconderMsjDeExito(){
-    mensajeValidarFormContacto.fadeOut('slow');
+    function esconderMsjDeExito(){
+        mensajeValidarFormContacto.fadeOut('slow');
 
-}
-setTimeout(esconderMsjDeExito,6000);
-};
+    }
+    setTimeout(esconderMsjDeExito,6000);
+    
+            
+            };
+
+
 const formContactoMensajeValido= (mensaje) => { return /^.{1,255}$/.test(mensaje)};
 const formContactoNombreValido= (nombre) => { return /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(nombre)};
 const formContactoMailValido = (mail) => { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail); }
     
 
 form1.on('submit',validarFormContacto);
+
 btnFormContactoSubmit.on('click', ()=>{
     form1.submit(validarFormContacto);
 
