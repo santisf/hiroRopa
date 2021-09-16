@@ -30,15 +30,14 @@ const validarFormContacto = function(e) {
             miMail.attr("href", `mailto:santiago.foti1@gmail.com?subject=nombre: ${form1.get('name')} email: ${form1.get('email')} cel: ${form1.get('tel')}&body=${form1.get('msj')}`)
             miMail.text("mail");
             enviarMail.click();*/
-            enviarFormularioContacto();
-           
-           console.log(loader);
-           
+            
+            console.log(formContactoNombre);
+           console.log("entro aca");
            loader.classList.remove("none");
            loader.style.position="absolute";
            loader.style.top="48%";
            loader.style.right="48%";
-           
+           enviarFormularioContacto();
           
            
         }  
@@ -82,11 +81,12 @@ const validarFormContacto = function(e) {
                     mensajeValidarFormContacto.html("Hubo un error en el servidor. Intentelo más tarde");
                     mensajeValidarFormContacto.css("display", "block");
                     loader.classList.add("none");
+                    return
 
                 })
                 .catch(error => console.log(error));
                 
-        return false;
+        return;
 
     }
 
@@ -96,6 +96,7 @@ const validarFormContacto = function(e) {
         mensajeValidarFormContacto.slideDown('fast');
         setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 2000);
         formContactoNombre.focus();
+        console.log("entro al nombre");
         return false;
     }
 
@@ -149,10 +150,7 @@ const formContactoMailValido = (mail) => { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.t
 
 form1.on('submit',validarFormContacto);
 
-btnFormContactoSubmit.on('click', ()=>{
-    form1.submit(validarFormContacto);
 
-})
 
 //ANIMACION CON JQUERY
 const divIconoG = $(".divIconoGrandeContacto");
