@@ -70,11 +70,11 @@ const validarFormContacto = function(e) {
                        
                         loader.classList.add("none");
                         
-                        mensajeValidarFormContacto.html("Gracias por contactarnos!");
+                        mensajeValidarFormContacto.html("Su mensaje fue enviado con éxtio, Gracias por contactarnos!");
                         mensajeValidarFormContacto.css("display", "block");
                         mensajeValidarFormContacto.css("backgroundColor", "trasnparent");
-                        mensajeValidarFormContacto.css("color", "white");
-                        mensajeValidarFormContacto.css("border", "solid green");
+                        mensajeValidarFormContacto.css("color", "#ebe9e9");
+                        mensajeValidarFormContacto.css("border", "solid green 0.8px");
                         return
                     }    
 
@@ -102,8 +102,8 @@ const validarFormContacto = function(e) {
 
 
 
-    if(formContactoTel.val()==="(+54 9) "){
-        mensajeValidarFormContacto.html("Debe completar el campo con su telefono");
+    if(!formContactoTelValido(formContactoTel.val())){
+        mensajeValidarFormContacto.html("Debe completar el campo con un numero de celular válido");
         mensajeValidarFormContacto.slideDown('fast');
         setTimeout(()=>{mensajeValidarFormContacto.slideUp('slow')}, 2000);
         formContactoTel.focus();
@@ -146,7 +146,7 @@ const validarFormContacto = function(e) {
 const formContactoMensajeValido= (mensaje) => { return /^.{1,255}$/.test(mensaje)};
 const formContactoNombreValido= (nombre) => { return /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(nombre)};
 const formContactoMailValido = (mail) => { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail); }
-    
+const formContactoTelValido = (tel) => { return /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/.test(tel)}  
 
 form1.on('submit',validarFormContacto);
 

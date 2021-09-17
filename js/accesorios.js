@@ -882,8 +882,8 @@ function mensajeAniadirCarrito(){
     mensajeAniadidoCarrito.appendChild(mensaje);
     mensajeAniadidoCarrito.style.display="block";
     mensajeAniadidoCarrito.style.backgroundColor="transparent";
-    mensajeAniadidoCarrito.style.color="black";
-    mensajeAniadidoCarrito.style.border="solid green";
+    mensajeAniadidoCarrito.style.color="#1a1919";
+    mensajeAniadidoCarrito.style.border="solid green 0.8px";
     mensajeAniadidoCarrito.style.fontSize="18px";
     mensajeAniadidoCarrito.style.textAlign="center";
     let btn =document.getElementsByClassName("btn-aniadirCarrito");
