@@ -74,7 +74,7 @@ const validarFormContacto = function(e) {
                         mensajeValidarFormContacto.css("display", "block");
                         mensajeValidarFormContacto.css("backgroundColor", "trasnparent");
                         mensajeValidarFormContacto.css("color", "#ebe9e9");
-                        mensajeValidarFormContacto.css("border", "solid green 0.8px");
+                        mensajeValidarFormContacto.css("border", "solid #26ab26 1px");
                         return
                     }    
 
@@ -137,7 +137,7 @@ const validarFormContacto = function(e) {
         mensajeValidarFormContacto.fadeOut('slow');
 
     }
-    setTimeout(esconderMsjDeExito,6000);
+    setTimeout(esconderMsjDeExito,3000);
     
             
             };
