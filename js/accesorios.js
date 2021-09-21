@@ -773,7 +773,7 @@ let iconoBtnAniadir = document.querySelector("fa-cart-plus");
 
 
 function clickAniadirCarrito(accesorio,select){
-            
+         
     let accesorioJson = JSON.stringify(accesorio);
     console.log(accesorioJson);
     let accesorioEnCarrito = JSON.parse(accesorioJson);
@@ -834,7 +834,7 @@ function clickAniadirCarrito(accesorio,select){
 
     
 }
-    
+ 
     if(typeof(localStorage[`${accesorio.id}`]) == "undefined"){
         console.log("se agrega")
         localStorage.setItem(accesorio.id, JSON.stringify(accesorioEnCarrito));
@@ -863,8 +863,10 @@ function clickAniadirCarrito(accesorio,select){
         localStorage.setItem(accesorio.id, JSON.stringify(accesorioEnCarrito));
 
     }
-   
+    
+    agregarContadorCarrito();
     mensajeAniadirCarrito();
+    
 
 }
 
@@ -879,6 +881,7 @@ function mensajeAniadirCarrito(){
     let mensajeAniadidoCarrito = document.querySelector(".mensajeAniadidoCarrito");
     let mensaje = document.createElement('span');
     mensaje.textContent= "El producto fue añadido al carrito con éxito!";
+   
     mensajeAniadidoCarrito.appendChild(mensaje);
     mensajeAniadidoCarrito.style.display="block";
     mensajeAniadidoCarrito.style.backgroundColor="transparent";
@@ -887,16 +890,16 @@ function mensajeAniadirCarrito(){
     mensajeAniadidoCarrito.style.fontSize="18px";
     mensajeAniadidoCarrito.style.textAlign="center";
     let btn =document.getElementsByClassName("btn-aniadirCarrito");
-    console.log(btn);
+    
     let iconoAniadir = JSON.stringify(document.querySelector(".iconoAniadirCarrito"));
-    console.log(iconoAniadir);
+    
     for (btns of btn){
 
         btns.disabled=true;
         btns.textContent="Añadiendo..."
     }
     
-    
+   
     
 
     //TIEMPO QUE DURA EL MENSAJE
@@ -928,7 +931,7 @@ function mensajeAniadirCarrito(){
     }
 
 
-    setTimeout(esconderMsjAniadirCarrito,2000);
+    setTimeout(esconderMsjAniadirCarrito,3000);
 
     }
 
@@ -987,11 +990,63 @@ function mensajeAniadirCarrito(){
 
                             function eliminarElementoCarrito(){
 
-                                total=total-price;
-                                console.log(total);
-                                divContenedor.innerHTML="";
-                                localStorage.removeItem(clave);
-                                
+                               
+                                if(item.talle[item.talle.length-1].stock>0){
+                    
+                                    item.talle[item.talle.length-1].stock-=1;
+                                    console.log(item.talle[item.talle.length-1].stock)
+
+                                    /*
+                                    for(let talle of item.talle){
+
+                                        cantidad.innerHTML="";
+                                        let cantidad1= document.createElement("p");
+                                        cantidad1.textContent+=`cantidad: ${talle.stock} de talle: ${talle.talle}`;
+                                        cantidad.appendChild(cantidad1);
+                                       
+                                    }
+                                    price-=item.precio;
+                                    total-=item.precio;
+                                    precio.textContent = `$${item.precio} c/u, total: $${price}`;*/
+
+
+                                    localStorage.setItem(clave, JSON.stringify(item)); 
+                                    if(item.talle[item.talle.length-1].stock==0){
+
+
+                                       
+                                        item.talle.splice(item.talle.length-1,1);
+                                        localStorage.setItem(clave, JSON.stringify(item)); 
+                                        if(item.talle.length==0){
+
+                                            localStorage.removeItem(`${item.id}`);
+                                            divContenedor.innerHTML=""; 
+
+                                            
+                                        }
+                                    }
+                                    
+                                    
+                                   /*
+                                    
+                                    */
+                                    
+
+                                }
+
+                                agregarContadorCarrito();
+                                cantidad.innerHTML="";
+                                for(let talle of item.talle){
+
+                                    let cantidad1= document.createElement("p");
+                                    cantidad1.textContent+=`cantidad: ${talle.stock} de talle: ${talle.talle}`;
+                                    cantidad.appendChild(cantidad1);
+                                   
+                                }
+                                total-=item.precio;
+                                price-=item.precio;
+                                precio.textContent = `$${item.precio} c/u, total: $${price}`;
+
                                 
                             }
             
@@ -999,6 +1054,8 @@ function mensajeAniadirCarrito(){
                             titulo.textContent = item.nombre;
 
                             let cantidad= document.createElement("div");
+
+                          
 
                             for(let talle of item.talle){
 
@@ -1010,12 +1067,9 @@ function mensajeAniadirCarrito(){
         
                             let precio = document.createElement("p");
                             precio.textContent = `$${item.precio} c/u, total: $${price}`;
-                            
 
                             
-
                             
-
 
         
                         div2.appendChild(titulo);
@@ -1158,5 +1212,87 @@ function mensajeAniadirCarrito(){
         */
     }
 
+        
+        //contador del carrito
+        
+        let carritoIcon = document.querySelector(".header__row__div__nav__div__ul__li__nav-link--icon");
+        let contadorCarrito = document.createElement("div");
+        
+        agregarContadorCarrito();
+        
+        
+        carritoIcon.appendChild(contadorCarrito);
+        
+        function agregarContadorCarrito(){
+            let numContadorCarrito=0;
+            carritoIcon.style.position="relative";
+            contadorCarrito.style.borderRadius="50px";
+            contadorCarrito.style.backgroundColor="#6F5CF3";
+            contadorCarrito.style.width="17px";
+            contadorCarrito.style.height="17px";
+            contadorCarrito.style.position="absolute";
+            contadorCarrito.style.top="22px";
+            contadorCarrito.style.left="22px";
+            contadorCarrito.style.color="white";
+            contadorCarrito.style.textAlign="center";
+            contadorCarrito.style.fontSize="12px";
+            contadorCarrito.style.display="inline-block";
+
+
+            for(let i = 0 ; i< localStorage.length; i++){
+            
+                let key=localStorage.key(i);
+                let accesorio = JSON.parse(localStorage[`${key}`])
+                for(talle of accesorio.talle){
+
+                    numContadorCarrito+=talle.stock; 
+                }
+
+            }
+            if(numContadorCarrito > 5){
+
+                contadorCarrito.style.fontSize="11px"
+            
+                contadorCarrito.textContent=5+"+";
+                return;
+            }
+            contadorCarrito.textContent=numContadorCarrito;
+            
+            if(localStorage.length==0){
+                contadorCarrito.style.display="none";
+            }
+            
+
+            
+            /*
+            let contadorCarrito = $(".contadorCarrito");
+            contadorCarrito.css("display","none")
+            contadorCarrito.css("border-radius", "50px");
+            contadorCarrito.css("background-color","#6F5CF3");
+            contadorCarrito.css("width","17px");
+            contadorCarrito.css("height","17px");
+            contadorCarrito.css("position","relative");
+            contadorCarrito.css("top","12px");
+            contadorCarrito.css("right","12px");
+            contadorCarrito.css("color","white");
+            contadorCarrito.css("text-align","center");
+            contadorCarrito.css("font-size","12px");
+            carritoIcon.append(contadorCarrito);
+            if(localStorage.length > 0){
+                console.log(localStorage.length);
+                contadorCarrito.css("display","inline-block");
+                
+                if(localStorage.length > 5){
+
+                    contadorCarrito.text(localStorage.length+"+");
+                    return;
+                }
+
+                contadorCarrito.text(localStorage.length);
+                
+            }
+            console.log(contadorCarrito);
+            */
+        }
         
         
