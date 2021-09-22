@@ -886,6 +886,7 @@ function mensajeAniadirCarrito(){
     mensajeAniadidoCarrito.style.display="block";
     mensajeAniadidoCarrito.style.backgroundColor="transparent";
     mensajeAniadidoCarrito.style.color="#1a1919";
+    mensajeAniadidoCarrito.style.padding="35px 0px";
     mensajeAniadidoCarrito.style.border="solid green 0.8px";
     mensajeAniadidoCarrito.style.fontSize="18px";
     mensajeAniadidoCarrito.style.textAlign="center";
@@ -931,7 +932,7 @@ function mensajeAniadirCarrito(){
     }
 
 
-    setTimeout(esconderMsjAniadirCarrito,3000);
+    setTimeout(esconderMsjAniadirCarrito,1500);
 
     }
 
@@ -1039,7 +1040,7 @@ function mensajeAniadirCarrito(){
                                 for(let talle of item.talle){
 
                                     let cantidad1= document.createElement("p");
-                                    cantidad1.textContent+=`cantidad: ${talle.stock} de talle: ${talle.talle}`;
+                                    cantidad1.textContent=`cantidad: ${talle.stock} de talle: ${talle.talle}`;
                                     cantidad.appendChild(cantidad1);
                                    
                                 }
@@ -1129,46 +1130,7 @@ function mensajeAniadirCarrito(){
         footer.appendChild(button1);
         
         modalCarritoHTML.appendChild(footer);
-      /*  
-        function jqueryClose(){
-                let buttonC = "<button type='button' class='btn btn-outline-success btnCloseModal my-2 my-sm-0'>CERRAR</button>";
-                $(".modalCarrito__div__modalContent__modalCarritoFooter").append(buttonC);
-                $(".btnCloseModal").click(() => { 
-                    
-                    $(".modalCarrito").modal().slideUp(1100);
-                    
-                    
-
-            });
-            */
-
-/*
-            function cla(){
-                setTimeout(() => {
-                        
-                    $(".btnCloseModal").attr("data-dismiss", "modal");
-                    $(".btnCloseModal").click();
-                
-                }, 1080);
-            }
-
-
-            for(let i =0; i<2 ; i++){
-
-                if(i=0){
-                    $(".btnCloseModal").attr("data-dismiss", "modal");
-
-                }
-
-            }
-            
-            
-                $(".btnCloseModal").css("margin-left", "20px");
-                
-        }
-
-        
-*/
+     
 
 
         function refreshFooterModal(){
