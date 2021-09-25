@@ -1,0 +1,14 @@
+{
+    "buzos":[
+        {"nombre":"Buzo amarillo - saturno","id":"23","fecha":20200127,"stock":true,"talle":[{"stock":1,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":1,"talle":"L"}, {"stock":0,"talle":"XL"}],"precio":2500,"img":["../assets/img/buzoAmarilloPlaneta.png", "buzoAmarilloPlaneta"]},
+        {"nombre":"Buzo gris - canguro vintage","id":"24","fecha":20200129,"stock":true,"talle":[{"stock":1,"talle":"S"}, {"stock":0,"talle":"M"}, {"stock":1,"talle":"L"}, {"stock":1,"talle":"XL"}],"precio":2600,"img":["../assets/img/buzoGrisCapucha.png", "buzoGrisCapucha"]},
+        {"nombre":"Buzo negro - what?","id":"25","fecha":20210129,"stock":true,"talle":[{"stock":0,"talle":"S"}, {"stock":0,"talle":"M"}, {"stock":1,"talle":"L"}, {"stock":1,"talle":"XL"}],"precio":2350,"img":["../assets/img/buzoNegroWhat.png", "buzoNegroWhat"]},
+        {"nombre":"Buzo gris - ying y yang","id":"26","fecha":20210321,"stock":true,"talle":[{"stock":1,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":1,"talle":"L"}, {"stock":1,"talle":"XL"}],"precio":2250,"img":["../assets/img/buzoGrisYing.png","buzoGrisYing"]},
+        {"nombre":"Buzo rayado - azul y marrón","id":"27","fecha":20210321,"stock":true,"talle":[{"stock":1,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":0,"talle":"L"}, {"stock":1,"talle":"XL"}],"precio":2230,"img":["../assets/img/buzoAzulRayado.png","buzoAzulRayado"]},
+        {"nombre":"Remera gris - moon","id":"28","fecha":20190321,"stock":true,"talle":[{"stock":1,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":0,"talle":"L"}, {"stock":0,"talle":"XL"}],"precio":2130,"img":["../assets/img/buzoGrisLuna.png","buzoGrisLuna"]},
+        {"nombre":"Buzo sol- bordo","id":"29","fecha":20190221,"stock":true,"talle":[{"stock":1,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":0,"talle":"L"}, {"stock":1,"talle":"XL"}],"precio":2050,"img":["../assets/img/buzoSolBordo.png","buzoSolBordo"]},
+        {"nombre":"Buzo gris - calavera","id":"30","fecha":20190205,"stock":true,"talle":[{"stock":1,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":1,"talle":"L"}, {"stock":1,"talle":"XL"}],"precio":2200,"img":["../assets/img/buzoGrisCalavera.png","buzoGrisCalavera"]},
+        {"nombre":"Buzo lila - liso","id":"31","fecha":20210205,"stock":true,"talle":[{"stock":0,"talle":"S"}, {"stock":"0","talle":"M"}, {"stock":1,"talle":"L"}, {"stock":0,"talle":"XL"}],"precio":2250,"img":["../assets/img/buzoLilaLiso.png","buzoLilaLiso"]},
+        {"nombre":"Buzo negro - mangas cuadros","id":"32","fecha":20210321,"stock":true,"talle":[{"stock":0,"talle":"S"}, {"stock":1,"talle":"M"}, {"stock":1,"talle":"L"}, {"stock":1,"talle":"XL"}],"precio":2250,"img":["../assets/img/buzoNegroBlanco.png","buzoNegroBlanco"]}
+    ]
+}

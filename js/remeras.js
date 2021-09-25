@@ -676,12 +676,8 @@ function mensajeAniadirCarrito(){
             
         }
 
-       
-
-        
         mensajeAniadidoCarrito.innerHTML="";
         
-
     }
 
 

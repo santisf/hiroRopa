@@ -81,12 +81,11 @@ const validarFormContacto = function(e) {
                     mensajeValidarFormContacto.html("Hubo un error en el servidor. Intentelo más tarde");
                     mensajeValidarFormContacto.css("display", "block");
                     loader.classList.add("none");
-                    return
+                    
 
                 })
                 .catch(error => console.log(error));
-                
-        return;
+    
 
     }
 

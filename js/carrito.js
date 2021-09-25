@@ -42,7 +42,7 @@ function generarCarritoHtml(){
 
         let buttonX = document.createElement("button");
         buttonX.classList.add("btn-primary");
-        buttonX.classList.add("buttonXmodalCarrito");
+        buttonX.classList.add("buttonXCarritoHtml");
         buttonX.type="button";
         buttonX.textContent="X";
         buttonX.style.justifyContent="right";

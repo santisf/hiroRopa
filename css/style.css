@@ -146,7 +146,7 @@ a:hover {
 /*SECCION ACCSESORIOS HTML*/
 /* CARDS DE PRODUCTOS ACCESORIOS*/
 /* ELEMENTO DE PAGINACION ACCSESORIOS*/
-.paginacionAccesorios nav ul li .paginacionAccesorios__nav__ul__li__paginaActiva {
+.paginacion nav ul li .paginacion__nav__ul__li__paginaActiva {
   background-color: black;
   color: white; }
 
@@ -268,7 +268,7 @@ a:hover {
 /*SECCION ACCSESORIOS HTML*/
 /* CARDS DE PRODUCTOS ACCESORIOS*/
 /* ELEMENTO DE PAGINACION ACCSESORIOS*/
-.paginacionAccesorios nav ul li .paginacionAccesorios__nav__ul__li__paginaActiva {
+.paginacion nav ul li .paginacion__nav__ul__li__paginaActiva {
   background-color: black;
   color: white; }
 
@@ -615,15 +615,21 @@ header .row div {
     justify-content: flex-end; }
 
 /* ELEMENTO DE PAGINACION ACCSESORIOS*/
-.paginacionAccesorios {
-  margin-top: 30px; }
+.paginacion {
+  margin-top: 50px; }
 
 /* SECCION CARRITO.HTML ----------------------------------------------------------------*/
 .bodyCarrito {
   overflow-x: hidden; }
 
-.carrito .row div div .carrito__row__div__div__productosCarrito__texto {
-  font-size: 1em; }
+.carrito .row div .carrito__row__div__div__productosCarrito {
+  position: relative; }
+  .carrito .row div .carrito__row__div__div__productosCarrito .carrito__row__div__div__productosCarrito__texto {
+    font-size: 1em; }
+    .carrito .row div .carrito__row__div__div__productosCarrito .carrito__row__div__div__productosCarrito__texto .buttonXCarritoHtml {
+      position: absolute;
+      right: 1%;
+      bottom: 1%; }
 
 .carrito .row .carrito__row__tusProductos {
   border-radius: 8px 0 0 0; }

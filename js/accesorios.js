@@ -379,7 +379,7 @@ function seleccionarOrden(){
     }
 
         function getPaginacion(orden){
-            let pag= document.querySelector(".paginacionAccesorios--ul");
+            let pag= document.querySelector(".paginacion--ul");
             let pages = Math.ceil(orden.length/9);
             let orden1 = orden.slice();
             pag.innerHTML ="";
@@ -400,11 +400,11 @@ function seleccionarOrden(){
                 console.log(orden1.slice(0,9));
                 link.addEventListener("click", () => { 
 
-                    linkPrev.classList.remove("paginacionAccesorios__nav__ul__li__paginaActiva");
+                    linkPrev.classList.remove("paginacion__nav__ul__li__paginaActiva");
                    
                     linkPrev=link;
                     
-                    link.classList.add("paginacionAccesorios__nav__ul__li__paginaActiva");
+                    link.classList.add("paginacion__nav__ul__li__paginaActiva");
                     
                     accesoriosRow.innerHTML="";
 

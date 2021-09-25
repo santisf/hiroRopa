@@ -470,8 +470,8 @@ header{
 }
 
 /* ELEMENTO DE PAGINACION ACCSESORIOS*/
-.paginacionAccesorios{
-    margin-top:30px;
+.paginacion{
+    margin-top:50px;
 }
 
 
@@ -482,9 +482,22 @@ header{
 .carrito{
     .row{
         div{
-            div{
+            .carrito__row__div__div__productosCarrito{
+
+                position:relative;
+
                 .carrito__row__div__div__productosCarrito__texto{
+
                     font-size:1em;
+                    
+
+                    .buttonXCarritoHtml{
+
+                        position:absolute;
+                        right: 1%;
+                        bottom:1%;
+
+                    }
                 }
             }
         }
