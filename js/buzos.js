@@ -6,14 +6,14 @@ function traerProductos(){
         .then( data => productos = data.buzos); 
 
 }
-
+*/
 document.addEventListener('DOMContentLoaded', () => { 
     
-    traerProductos();
+    generarModalCarrito();
     
 
 })
-*/
+
 //MODELO
 
 const productos=[
